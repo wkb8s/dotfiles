@@ -25,6 +25,14 @@ set clipboard=unnamed
 let mapleader="\<Space>"
 inoremap <silent> jj <Esc>
 nnoremap ; :
+
+" cursor control
+imap <C-p> <Up>
+imap <C-n> <Down>
+imap <C-b> <Left>
+imap <C-f> <Right>
+
+" brackets completion
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
