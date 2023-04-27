@@ -12,3 +12,4 @@ nvim +PlugInstall +qall
 
 # link
 ln -sf ~/dotfiles/nvim ~/.config/nvim
+ln -sf ~/dotfiles/.clang-format ~/.clang-format
