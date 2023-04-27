@@ -3,6 +3,8 @@
 """"""""""""""""""
 call plug#begin('~/.vim/plugged')
 
+" completion and linting
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
@@ -55,6 +57,14 @@ if !has('gui_running') && $TMUX !=# ''
         autocmd VimEnter,VimLeave * silent !tmux set status
     augroup END
 endif
+
+""""""""""
+" CoCvim "
+""""""""""
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 """"""""
 " Misc "
