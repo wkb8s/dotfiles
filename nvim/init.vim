@@ -10,7 +10,6 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
-
 """""""""""
 " Editing "
 """""""""""
@@ -26,6 +25,11 @@ set clipboard=unnamed
 let mapleader="\<Space>"
 inoremap <silent> jj <Esc>
 nnoremap ; :
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
 
 " tab
 nnoremap <Leader>t :tabnew<CR>
@@ -45,7 +49,7 @@ nnoremap <silent> <leader>r :Rg<CR>
 """"""
 " UI "
 """"""
-set number
+set relativenumber
 
 " colors
 colorscheme atom-dark-256
