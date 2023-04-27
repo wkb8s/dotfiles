@@ -59,7 +59,7 @@ nnoremap <Leader>l $
 " file control
 nnoremap <Leader>a ggVG
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
+nnoremap <Leader>q :q!<CR>
 
 " brackets completion
 inoremap { {}<LEFT>
@@ -69,7 +69,7 @@ inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
 
 " tab
-nnoremap <Leader>t :tabnew<CR>
+" nnoremap <Leader>t :tabnew<CR>
 
 " search
 nnoremap n nzz
@@ -86,8 +86,11 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " fzf mappings
-nnoremap <silent> <Leader>f :Files<CR>
+nnoremap <silent> <Leader>t :Files<CR>
 nnoremap <silent> <leader>r :Rg<CR>
+
+" clang format
+nnoremap <Leader>f :ClangFormat<CR>
 
 """"""
 " UI "
@@ -113,15 +116,10 @@ endif
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-""""""""""""""""
-" clang format "
-""""""""""""""""
-
-let g:clang_format#style_options = {
-    \ "BasedOnStyle" : "Google",
-    \ "AccessModifierOffset" : -4,
-    \ "AllowShortIfStatementsOnASingleLine" : "true",
-    \ }
+""""""""""
+" format "
+""""""""""
+let g:clang_format#detect_style_file=1
 
 """"""""
 " Misc "

@@ -1,0 +1,26 @@
+---
+BasedOnStyle: 'Google'
+AlignEscapedNewlinesLeft: true
+AlignConsecutiveAssignments: true
+AlignEscapedNewlinesLeft: true
+AlignTrailingComments: true, 
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: 'Inline'
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakAfterDefinitionReturnType: false
+AlwaysBreakBeforeMultilineStrings: true
+BinPackArguments: true
+BinPackParameters: true
+BreakBeforeBraces: 'Attch'
+ColumnLimit: 64
+DerivePointerBinding: true
+IndentCaseLabels: true
+MaxEmptyLinesToKeep: 1
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeParens: 'ControlStatements'
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 1
+SpacesInParentheses: false
+Standard: 'Cpp11'
