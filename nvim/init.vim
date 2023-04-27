@@ -27,10 +27,21 @@ inoremap <silent> jj <Esc>
 nnoremap ; :
 
 " cursor control
-imap <C-p> <Up>
-imap <C-n> <Down>
-imap <C-b> <Left>
-imap <C-f> <Right>
+inoremap <C-p> <Up>
+inoremap <C-n> <Down>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up>   gk
+nnoremap <Leader>h ^
+nnoremap <Leader>l $
+
+" file control
+nnoremap <Leader>a ggVG
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
 
 " brackets completion
 inoremap { {}<LEFT>
@@ -41,6 +52,12 @@ inoremap ' ''<LEFT>
 
 " tab
 nnoremap <Leader>t :tabnew<CR>
+
+" search
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
 
 " split views
 nnoremap <Leader>- :split<CR>
