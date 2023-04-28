@@ -9,6 +9,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'kana/vim-operator-user'
+Plug 'tribela/vim-transparent'
 
 call plug#end()
 
@@ -73,8 +74,8 @@ inoremap ' ''<LEFT>
 
 " tab
 " nnoremap <Leader>t :tabnew<CR>
-map <F3> gt
-map <F4> gT
+map <F3> gT
+map <F4> gt
 
 " search
 set ignorecase
@@ -101,6 +102,7 @@ nnoremap <Leader>f :ClangFormat<CR>
 " ctags
 noremap <Leader>b <C-t>
 noremap <Leader>j <C-]>
+set tags=.tags
 
 """"""
 " UI "
@@ -109,11 +111,28 @@ set relativenumber
 set cursorline
 set virtualedit=onemore
 set showmatch
+
 " set list listchars=space:･
 autocmd BufWritePre * :%s/\s\+$//e
 
 " colors
-colorscheme atom-dark-256
+colorscheme monokai
+
+" highlight Normal ctermbg=NONE guibg=NONE
+" highlight NonText ctermbg=NONE guibg=NONE
+" highlight LineNr ctermbg=NONE guibg=NONE
+" highlight Folded ctermbg=NONE guibg=NONE
+" highlight EndOfBuffer ctermbg=NONE guibg=NONE
+" highlight Comment ctermbg=NONE guibg=NONE
+" highlight Statement ctermbg=NONE guibg=NONE
+" highlight Identifier ctermbg=NONE guibg=NONE
+" highlight Preproc ctermbg=NONE guibg=NONE
+" highlight Type ctermbg=NONE guibg=NONE
+" highlight Constant ctermbg=NONE guibg=NONE
+" highlight Special ctermbg=NONE guibg=NONE
+" highlight Conditional ctermbg=NONE guibg=NONE
+" highlight Repeat ctermbg=NONE guibg=NONE
+" highlight Exception ctermbg=NONE guibg=NONE
 
 " hide tmux bar
 if !has('gui_running') && $TMUX !=# ''
