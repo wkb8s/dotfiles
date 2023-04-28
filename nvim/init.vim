@@ -17,6 +17,8 @@ call plug#end()
 """""""""""
 set shiftwidth=4
 set clipboard=unnamed
+set fileformats=unix,dos,mac
+set fileencodings=utf-8,sjis
 
 augroup fileTypeIndent
     autocmd!
@@ -70,6 +72,7 @@ inoremap ' ''<LEFT>
 " nnoremap <Leader>t :tabnew<CR>
 
 " search
+set ignorecase
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap * *zz
@@ -89,6 +92,10 @@ nnoremap <silent> <leader>r :Rg<CR>
 
 " clang format
 nnoremap <Leader>f :ClangFormat<CR>
+
+" ctags
+noremap <Leader>b <C-t>
+noremap <Leader>j <C-]>
 
 """"""
 " UI "
