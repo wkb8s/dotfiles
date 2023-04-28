@@ -70,6 +70,8 @@ inoremap ' ''<LEFT>
 
 " tab
 " nnoremap <Leader>t :tabnew<CR>
+map <F3> gt
+map <F4> gT
 
 " search
 set ignorecase
