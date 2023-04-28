@@ -3,7 +3,7 @@ BasedOnStyle: 'Google'
 AlignEscapedNewlinesLeft: true
 AlignConsecutiveAssignments: true
 AlignEscapedNewlinesLeft: true
-AlignTrailingComments: true, 
+AlignTrailingComments: true
 AllowShortBlocksOnASingleLine: false
 AllowShortCaseLabelsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: 'Inline'
@@ -13,7 +13,7 @@ AlwaysBreakAfterDefinitionReturnType: false
 AlwaysBreakBeforeMultilineStrings: true
 BinPackArguments: true
 BinPackParameters: true
-BreakBeforeBraces: 'Attch'
+BreakBeforeBraces: 'Attach'
 ColumnLimit: 64
 DerivePointerBinding: true
 IndentCaseLabels: true
