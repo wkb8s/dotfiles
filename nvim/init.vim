@@ -61,6 +61,9 @@ nnoremap <Leader>a ggVG
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q!<CR>
 
+" highlight
+nnoremap <Leader>z :noh<CR>
+
 " brackets completion
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
