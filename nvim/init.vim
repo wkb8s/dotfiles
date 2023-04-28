@@ -94,6 +94,11 @@ nnoremap <Leader>f :ClangFormat<CR>
 " UI "
 """"""
 set relativenumber
+set cursorline
+set virtualedit=onemore
+set showmatch
+" set list listchars=space:･
+autocmd BufWritePre * :%s/\s\+$//e
 
 " colors
 colorscheme atom-dark-256
