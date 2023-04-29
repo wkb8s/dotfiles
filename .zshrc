@@ -29,7 +29,16 @@ alias ls='ls -F -G --color=auto'
 alias ll='ls -l'
 alias l='ls -a'
 alias la='ls -a'
-alias ctags="`brew --prefix`/bin/ctags -R -f .tags"
+
+# Ctags
+case ${OSTYPE} in
+  darwin*)
+    alias ctags="`brew --prefix`/bin/ctags -R -f .tags"
+    ;;
+  linux*)
+    alias ctags='ctags -R -f .tags'
+    ;;
+esac
 
 # Syntaxhighlighting
 if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
