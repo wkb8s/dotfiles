@@ -21,6 +21,7 @@ alias v='nvim'
 alias ls='ls -F -G --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
+alias ctags='ctags -R -f .tags'
 
 # Syntaxhighlighting
 if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
