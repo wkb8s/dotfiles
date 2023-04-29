@@ -10,6 +10,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'kana/vim-operator-user'
 Plug 'tribela/vim-transparent'
+Plug 'itchyny/lightline.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 call plug#end()
 
@@ -62,6 +66,10 @@ nnoremap <Leader>a ggVG
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q!<CR>
 
+" toggle
+nnoremap <silent> <Leader>tn :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>tt :TagbarToggle<CR>
+
 " highlight
 nnoremap <Leader>z :noh<CR>
 
@@ -93,11 +101,11 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " fzf mappings
-nnoremap <silent> <Leader>t :Files<CR>
+nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <leader>r :Rg<CR>
 
 " clang format
-nnoremap <Leader>f :ClangFormat<CR>
+nnoremap <Leader>c :ClangFormat<CR>
 
 " ctags
 noremap <Leader>b <C-t>
@@ -111,12 +119,16 @@ set relativenumber
 set cursorline
 set virtualedit=onemore
 set showmatch
+set termguicolors
 
 " set list listchars=space:･
 autocmd BufWritePre * :%s/\s\+$//e
 
+" status line
+let g:lightline = {'colorscheme': 'onedark'}
+
 " colors
-colorscheme hybrid
+colorscheme onedark
 
 " highlight Normal ctermbg=NONE guibg=NONE
 " highlight NonText ctermbg=NONE guibg=NONE
