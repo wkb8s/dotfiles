@@ -116,7 +116,7 @@ set showmatch
 autocmd BufWritePre * :%s/\s\+$//e
 
 " colors
-colorscheme monokai
+colorscheme hybrid
 
 " highlight Normal ctermbg=NONE guibg=NONE
 " highlight NonText ctermbg=NONE guibg=NONE
@@ -135,12 +135,12 @@ colorscheme monokai
 " highlight Exception ctermbg=NONE guibg=NONE
 
 " hide tmux bar
-if !has('gui_running') && $TMUX !=# ''
-    augroup Tmux
-        autocmd!
-        autocmd VimEnter,VimLeave * silent !tmux set status
-    augroup END
-endif
+" if !has('gui_running') && $TMUX !=# ''
+"     augroup Tmux
+"         autocmd!
+"         autocmd VimEnter,VimLeave * silent !tmux set status
+"     augroup END
+" endif
 
 """"""""""
 " CoCvim "
