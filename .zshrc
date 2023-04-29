@@ -15,6 +15,7 @@ prompt pure
 
 # General
 setopt no_beep
+set autochdir
 
 # Alias
 alias c='cd'
@@ -30,16 +31,6 @@ alias ll='ls -l'
 alias l='ls -a'
 alias la='ls -a'
 
-# Ctags
-case ${OSTYPE} in
-  darwin*)
-    alias ctags="`brew --prefix`/bin/ctags -R -f .tags"
-    ;;
-  linux*)
-    alias ctags='ctags -R -f .tags'
-    ;;
-esac
-
 # Syntaxhighlighting
 if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
   source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -47,3 +38,14 @@ fi
 
 # Autosuggestion
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Ctags
+case ${OSTYPE} in
+  darwin*)
+    alias ctags="`brew --prefix`/bin/ctags -R -f .tags"
+    if [ "$TMUX" = "" ]; then tmux; fi
+    ;;
+  linux*)
+    alias ctags='ctags -R -f .tags'
+    ;;
+esac
