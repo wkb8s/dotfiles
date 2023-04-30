@@ -64,7 +64,8 @@ nnoremap <Leader>l $
 " file control
 nnoremap <Leader>a ggVG
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q!<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>Q :q!<CR>
 
 " toggle
 nnoremap <silent> <Leader>tn :NERDTreeToggle<CR>
@@ -84,6 +85,8 @@ inoremap ' ''<LEFT>
 " nnoremap <Leader>t :tabnew<CR>
 map <F3> gT
 map <F4> gt
+nnoremap <Leader>h gT
+nnoremap <Leader>l gt
 
 " search
 set ignorecase

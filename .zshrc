@@ -15,7 +15,7 @@ prompt pure
 
 # General
 setopt no_beep
-set autochdir
+set autochdir # not working ... (;;)
 
 # Alias
 alias c='cd'
