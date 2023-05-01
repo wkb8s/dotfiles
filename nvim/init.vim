@@ -96,12 +96,12 @@ nnoremap * *zz
 nnoremap # #zz
 
 " split views
-nnoremap <Leader>- :split<CR>
-nnoremap <Leader>\| :vsplit<CR>
-nnoremap <C-j> <C-w>j
-nnoremap <C-h> <C-w>h
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" nnoremap <Leader>- :split<CR>
+" nnoremap <Leader>\| :vsplit<CR>
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-l> <C-w>l
 
 " fzf mappings
 nnoremap <silent> <Leader>f :Files<CR>
