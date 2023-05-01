@@ -49,7 +49,7 @@ augroup END
 " basic bindings
 let mapleader="\<Space>"
 inoremap <silent> jj <Esc>
-nnoremap ; :
+" nnoremap ; :
 
 " cursor control
 inoremap <C-b> <Left>
