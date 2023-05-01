@@ -11,8 +11,21 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 nvim +PlugInstall +qall
 
 # link
-ln -sf ~/dotfiles/nvim ~/.config/nvim
-ln -sf ~/dotfiles/.clang-format ~/.clang-format
-ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/.hushlogin ~/.hushlogin
+case ${OSTYPE} in
+  darwin*)
+    # for Mac
+		ln -sf ~/GoogleDrive/My\ Drive/src/dotfiles/nvim ~/.config/nvim
+		ln -sf ~/GoogleDrive/My\ Drive/src/dotfiles/.clang-format ~/.clang-format
+		ln -sf ~/GoogleDrive/My\ Drive/src/dotfiles/.tmux.conf ~/.tmux.conf
+		ln -sf ~/GoogleDrive/My\ Drive/src/dotfiles/.zshrc ~/.zshrc
+		ln -sf ~/GoogleDrive/My\ Drive/src/dotfiles/.hushlogin ~/.hushlogin
+    ;;
+  linux*)
+    # for Linux
+		ln -sf ~/dotfiles/nvim ~/.config/nvim
+		ln -sf ~/dotfiles/.clang-format ~/.clang-format
+		ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+		ln -sf ~/dotfiles/.zshrc ~/.zshrc
+		ln -sf ~/dotfiles/.hushlogin ~/.hushlogin
+    ;;
+esac

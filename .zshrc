@@ -28,7 +28,7 @@ alias gs='git push'
 alias gl='git pull'
 alias ls='ls -F -G --color=auto'
 alias ll='ls -l'
-alias l='ls -a'
+alias l='ls'
 alias la='ls -a'
 
 # Syntaxhighlighting
@@ -47,5 +47,14 @@ case ${OSTYPE} in
     ;;
   linux*)
     alias ctags='ctags -R -f .tags'
+    ;;
+esac
+
+# set up login directory
+case ${OSTYPE} in
+  darwin*)
+    cd ~/GoogleDrive/My\ Drive
+    ;;
+  linux*)
     ;;
 esac
