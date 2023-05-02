@@ -4,9 +4,10 @@ export PATH=$PATH:/opt/homebrew/bin/
 # Customize to your needs...
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-autoload -Uz compinit
-compinit
-source ~/.zsh/enhancd/init.sh
+# Auto init enhancd
+# autoload -Uz compinit
+# compinit
+# source ~/.zsh/enhancd/init.sh
 
 # Prompt
 fpath+=($HOME/.zsh/pure)
@@ -18,9 +19,7 @@ setopt no_beep
 set autochdir # not working ... (;;)
 
 # Alias
-alias c='cd'
 alias e='exit'
-alias v='nvim'
 alias s='ssh waka'
 alias ga='git add .'
 alias gc='git commit -m'
@@ -30,6 +29,7 @@ alias ls='ls -F -G --color=auto'
 alias ll='ls -l'
 alias l='ls'
 alias la='ls -a'
+alias fzf='fzf --reverse --border'
 
 # Syntaxhighlighting
 if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
@@ -50,10 +50,38 @@ case ${OSTYPE} in
     ;;
 esac
 
+
+# Useful function
+c() {
+  local dir
+  case ${OSTYPE} in
+    darwin*)
+      cd ~/Google\ Drive/My\ Drive
+      ;;
+    linux*)
+      ;;
+  esac
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
+
+v() {
+  cd ~/Google\ Drive/My\ Drive
+  case ${OSTYPE} in
+    darwin*)
+      cd ~/Google\ Drive/My\ Drive
+      ;;
+    linux*)
+      ;;
+  esac
+  nvim `find . -type f | fzf`
+}
+
 # set up login directory
 case ${OSTYPE} in
   darwin*)
-    cd ~/GoogleDrive/My\ Drive
+    cd ~/Google\ Drive/My\ Drive
     ;;
   linux*)
     ;;

@@ -60,6 +60,8 @@ nnoremap <Down> gj
 nnoremap <Up>   gk
 nnoremap <Leader>h ^
 nnoremap <Leader>l $
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
 
 " file control
 nnoremap <Leader>a ggVG
@@ -112,7 +114,7 @@ nnoremap <Leader>c :ClangFormat<CR>
 
 " ctags
 noremap <Leader>b <C-t>
-noremap <Leader>j <C-]>
+noremap <Leader>j :lcd %:h<CR><C-]>
 set tags=.tags
 
 """"""

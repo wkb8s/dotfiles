@@ -14,11 +14,11 @@ nvim +PlugInstall +qall
 case ${OSTYPE} in
   darwin*)
     # for Mac
-		ln -sf ~/GoogleDrive/My\ Drive/src/dotfiles/nvim ~/.config/nvim
-		ln -sf ~/GoogleDrive/My\ Drive/src/dotfiles/.clang-format ~/.clang-format
-		ln -sf ~/GoogleDrive/My\ Drive/src/dotfiles/.tmux.conf ~/.tmux.conf
-		ln -sf ~/GoogleDrive/My\ Drive/src/dotfiles/.zshrc ~/.zshrc
-		ln -sf ~/GoogleDrive/My\ Drive/src/dotfiles/.hushlogin ~/.hushlogin
+		ln -sf ~/Google\ Drive/My\ Drive/src/dotfiles/nvim ~/.config/nvim
+		ln -sf ~/Google\ Drive/My\ Drive/src/dotfiles/.clang-format ~/.clang-format
+		ln -sf ~/Google\ Drive/My\ Drive/src/dotfiles/.tmux.conf ~/.tmux.conf
+		ln -sf ~/Google\ Drive/My\ Drive/src/dotfiles/.zshrc ~/.zshrc
+		ln -sf ~/Google\ Drive/My\ Drive/src/dotfiles/.hushlogin ~/.hushlogin
     ;;
   linux*)
     # for Linux
