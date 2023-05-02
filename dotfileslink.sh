@@ -19,6 +19,7 @@ case ${OSTYPE} in
 		ln -sf ~/Google\ Drive/My\ Drive/src/.dotfiles/.tmux.conf ~/.tmux.conf
 		ln -sf ~/Google\ Drive/My\ Drive/src/.dotfiles/.zshrc ~/.zshrc
 		ln -sf ~/Google\ Drive/My\ Drive/src/.dotfiles/.hushlogin ~/.hushlogin
+		echo "mac setup finished"
     ;;
   linux*)
     # for Linux
@@ -27,5 +28,6 @@ case ${OSTYPE} in
 		ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
 		ln -sf ~/.dotfiles/.zshrc ~/.zshrc
 		ln -sf ~/.dotfiles/.hushlogin ~/.hushlogin
+		echo "linux setup finished"
     ;;
 esac
