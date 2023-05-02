@@ -59,6 +59,7 @@ c() {
       cd ~/Google\ Drive/My\ Drive
       ;;
     linux*)
+      cd
       ;;
   esac
   dir=$(find ${1:-.} -path '*/\.*' -prune \
@@ -66,16 +67,17 @@ c() {
   cd "$dir"
 }
 
-v() {
+vv() {
   nvim `find . -type f | fzf`
 }
 
-vv() {
+v() {
   case ${OSTYPE} in
     darwin*)
       cd ~/Google\ Drive/My\ Drive
       ;;
     linux*)
+      cd
       ;;
   esac
   nvim `find . -type f | fzf`
