@@ -5,9 +5,9 @@ export PATH=$PATH:/opt/homebrew/bin/
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Auto init enhancd
-# autoload -Uz compinit
-# compinit
-# source ~/.zsh/enhancd/init.sh
+autoload -Uz compinit
+compinit
+source ~/.zsh/enhancd/init.sh
 
 # Prompt
 fpath+=($HOME/.zsh/pure)
@@ -81,6 +81,31 @@ v() {
       ;;
   esac
   nvim `find . -type f | fzf`
+}
+
+o() {
+  local dir
+  case ${OSTYPE} in
+    darwin*)
+      cd ~/Google\ Drive/My\ Drive
+      ;;
+    linux*)
+      cd
+      ;;
+  esac
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  open "$dir"
+}
+
+r() {
+  case ${OSTYPE} in
+    darwin*)
+      mv $1 ~/.Trash
+      ;;
+    linux*)
+      ;;
+  esac
 }
 
 # set up login directory
