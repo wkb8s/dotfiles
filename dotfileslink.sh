@@ -21,7 +21,7 @@ case ${OSTYPE} in
 		ln -sf ~/Google\ Drive/My\ Drive/src/.dotfiles/.hushlogin ~/.hushlogin
 		echo "mac setup finished"
     ;;
-  linux-gnu*)
+  *)
     # for Linux
 		ln -sf ~/.dotfiles/nvim ~/.config/nvim
 		ln -sf ~/.dotfiles/.clang-format ~/.clang-format
