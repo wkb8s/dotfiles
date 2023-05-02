@@ -47,7 +47,7 @@ case ${OSTYPE} in
 	tmux;
     fi
     ;;
-  linux*)
+  *)
     alias ctags='ctags -R -f .tags'
     ;;
 esac
@@ -60,7 +60,7 @@ c() {
     darwin*)
       cd ~/Google\ Drive/My\ Drive
       ;;
-    linux*)
+    *)
       cd
       ;;
   esac
@@ -78,7 +78,7 @@ v() {
     darwin*)
       cd ~/Google\ Drive/My\ Drive
       ;;
-    linux*)
+    *)
       cd
       ;;
   esac
@@ -91,7 +91,7 @@ o() {
     darwin*)
       cd ~/Google\ Drive/My\ Drive
       ;;
-    linux*)
+    *)
       cd
       ;;
   esac
@@ -105,7 +105,7 @@ r() {
     darwin*)
       mv $1 ~/.Trash
       ;;
-    linux*)
+    *)
       ;;
   esac
 }
@@ -115,6 +115,6 @@ case ${OSTYPE} in
   darwin*)
     cd ~/Google\ Drive/My\ Drive
     ;;
-  linux*)
+  *)
     ;;
 esac
