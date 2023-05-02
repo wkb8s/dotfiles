@@ -67,7 +67,10 @@ c() {
 }
 
 v() {
-  cd ~/Google\ Drive/My\ Drive
+  nvim `find . -type f | fzf`
+}
+
+vv() {
   case ${OSTYPE} in
     darwin*)
       cd ~/Google\ Drive/My\ Drive
