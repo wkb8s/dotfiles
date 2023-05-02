@@ -39,11 +39,13 @@ fi
 # Autosuggestion
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Ctags
+# Ctags and tmux
 case ${OSTYPE} in
   darwin*)
     alias ctags="`brew --prefix`/bin/ctags -R -f .tags"
-    if [ "$TMUX" = "" ]; then tmux; fi
+    if [ "$TMUX" = "" ]; then
+	tmux;
+    fi
     ;;
   linux*)
     alias ctags='ctags -R -f .tags'
