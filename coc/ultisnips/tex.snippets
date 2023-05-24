@@ -1,0 +1,37 @@
+snippet report "report template"
+\documentclass[dvipdfmx,a4paper,11pt]{article}
+\input{/Users/wakabayashidaiki/Google Drive/My Drive/dotfiles/macro/macro.tex}
+\begin{document}
+\ttl{\jobname}
+
+$1
+
+\end{document}
+endsnippet
+
+snippet sse "section"
+\section{$1}$2
+endsnippet
+
+snippet sss "subsection"
+\subsection{$1}$2
+endsnippet
+
+snippet ss2 "subsubsection"
+\subsubsection{$1}$2
+endsnippet
+
+snippet equation "equation"
+\begin{equation}
+%\label{eq:}
+$1
+\end{equation}
+endsnippet
+
+snippet goodnotes "include goodnotes"
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{../../goodnotes/images/$1}
+  \caption{$2}
+\end{figure}
+endsnippet

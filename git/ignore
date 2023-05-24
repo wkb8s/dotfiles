@@ -1,0 +1,33 @@
+# Mac
+.DS_Store
+/Applications/
+/Applications (Parallels)/
+/Parallels/
+/Library/
+/Music/
+/Pictures/
+/Movies/
+/Public/
+/Shared Drives/
+/.vim/
+/.zsh/
+/.local/
+
+# Git
+/.git/
+
+# C language
+*.out
+*.o
+test.*
+
+# Latex
+*.dvi
+*.synctex.gz
+*.fls
+*.aux
+*.log
+*.fdb_latexmk
+
+# VsCode
+.vscode

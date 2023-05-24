@@ -11,9 +11,12 @@ Plug 'rhysd/vim-clang-format'
 Plug 'kana/vim-operator-user'
 Plug 'tribela/vim-transparent'
 Plug 'itchyny/lightline.vim'
-Plug 'joshdick/onedark.vim'
+" Plug 'joshdick/onedark.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+" Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'lervag/vimtex'
+Plug 'mcchrish/nnn.vim'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -54,8 +57,8 @@ inoremap <silent> jj <Esc>
 " cursor control
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
-nnoremap j gj
-nnoremap k gk
+nnoremap j gjzz
+nnoremap k gkzz
 nnoremap <Down> gj
 nnoremap <Up>   gk
 nnoremap <Leader>h ^
@@ -120,7 +123,8 @@ set tags=.tags
 """"""
 " UI "
 """"""
-set relativenumber
+set number
+" set relativenumber
 set cursorline
 set virtualedit=onemore
 set showmatch
@@ -129,11 +133,8 @@ set termguicolors
 " set list listchars=space:･
 autocmd BufWritePre * :%s/\s\+$//e
 
-" status line
-let g:lightline = {'colorscheme': 'onedark'}
-
 " colors
-colorscheme onedark
+colorscheme nord
 
 " highlight Normal ctermbg=NONE guibg=NONE
 " highlight NonText ctermbg=NONE guibg=NONE
@@ -160,10 +161,13 @@ colorscheme onedark
 " endif
 
 " status bar
-let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
-let s:palette.normal.middle = [ [ 'NONE', 'NONE', 'NONE', 'NONE' ] ]
-let s:palette.inactive.middle = s:palette.normal.middle
-let s:palette.tabline.middle = s:palette.normal.middle
+" let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
+" let s:palette.normal.middle = [ [ 'NONE', 'NONE', 'NONE', 'NONE' ] ]
+" let s:palette.inactive.middle = s:palette.normal.middle
+" let s:palette.tabline.middle = s:palette.normal.middle
+let g:lightline = {
+   \ 'colorscheme': 'nord',
+   \ }
 
 """"""""""
 " CoCvim "
@@ -172,6 +176,13 @@ let s:palette.tabline.middle = s:palette.normal.middle
 " <C-g>u breaks current undo, please make your own choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+"""""""""
+" latex "
+"""""""""
+let g:vimtex_compiler_latexmk = { 'continuous' : 0 }
+let g:vimtex_quickfix_open_on_warning = 0
+let g:tex_conceal = ''
 
 """"""""""
 " format "
@@ -185,3 +196,10 @@ let g:clang_format#detect_style_file=1
 " fzf
 let g:fzf_action = {
   \ 'enter': 'tab split'}
+
+" nnn
+nnoremap <leader>n :NnnPicker %:p:h<CR>
+let g:nnn#action = {
+      \ '<c-t>': 'tab split',
+      \ '<c-s>': 'split',
+      \ '<c-v>': 'vsplit' }
