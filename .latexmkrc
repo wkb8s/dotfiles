@@ -22,11 +22,17 @@ if ($^O eq 'linux') {
     $pdf_previewer = "xdg-open %S";
 } elsif ($^O eq 'darwin') {
     $dvi_previewer = "open %S";
-    $pdf_previewer = "open %S";
+    # $pdf_previewer = "open %S";
+    # $pdf_previewer = "zathura %O %S";
+    $pdf_previewer    = "open -ga /Applications/Skim.app";
 } else {
     $dvi_previewer = "start %S";
     $pdf_previewer = "start %S";
 }
 
 # clean up
-$clean_full_ext = "%R.synctex.gz"
+# $clean_full_ext = "%R.synctex.gz";
+$clean_ext = "dvi aux fls log synctex.gz fdb_latexmk";
+
+# $aux_dir = "aux";
+# $out_dir = "pdf";

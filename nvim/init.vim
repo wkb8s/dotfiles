@@ -13,10 +13,15 @@ Plug 'tribela/vim-transparent'
 Plug 'itchyny/lightline.vim'
 " Plug 'joshdick/onedark.vim'
 Plug 'Yggdroot/indentLine'
-" Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'lervag/vimtex'
 Plug 'mcchrish/nnn.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'tpope/vim-commentary'
+Plug 'airblade/vim-rooter'
+Plug 'airblade/vim-gitgutter'
+Plug 'jiangmiao/auto-pairs'
+Plug 'terryma/vim-expand-region'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 
 call plug#end()
 
@@ -52,7 +57,11 @@ augroup END
 " basic bindings
 let mapleader="\<Space>"
 inoremap <silent> jj <Esc>
-" nnoremap ; :
+nnoremap <leader><leader> V
+nnoremap <CR> G
+nnoremap <C-h> gg
+nnoremap ; :
+nnoremap : ;
 
 " cursor control
 inoremap <C-b> <Left>
@@ -61,30 +70,21 @@ nnoremap j gjzz
 nnoremap k gkzz
 nnoremap <Down> gj
 nnoremap <Up>   gk
-nnoremap <Leader>h ^
-nnoremap <Leader>l $
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
 
 " file control
 nnoremap <Leader>a ggVG
-nnoremap <Leader>w :w<CR>
+nnoremap <Leader>s :w<CR>
+
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>Q :q!<CR>
 
-" toggle
-nnoremap <silent> <Leader>tn :NERDTreeToggle<CR>
-nnoremap <silent> <Leader>tt :TagbarToggle<CR>
-
 " highlight
 nnoremap <Leader>z :noh<CR>
-
-" brackets completion
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
 
 " tab
 " nnoremap <Leader>t :tabnew<CR>
@@ -101,30 +101,33 @@ nnoremap * *zz
 nnoremap # #zz
 
 " split views
-" nnoremap <Leader>- :split<CR>
-" nnoremap <Leader>\| :vsplit<CR>
-" nnoremap <C-j> <C-w>j
-" nnoremap <C-h> <C-w>h
-" nnoremap <C-k> <C-w>k
-" nnoremap <C-l> <C-w>l
+nnoremap <Leader>- :split<CR>
+nnoremap <Leader>\ :vsplit<CR>
+nnoremap <leader>j <C-w>j
+nnoremap <leader>h <C-w>h
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
 
 " fzf mappings
 nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <leader>r :Rg<CR>
-
-" clang format
-nnoremap <Leader>c :ClangFormat<CR>
 
 " ctags
 noremap <Leader>b <C-t>
 noremap <Leader>j :lcd %:h<CR><C-]>
 set tags=.tags
 
+" clang format
+augroup save_clang
+    autocmd!
+    autocmd BufWritePost *.[ch] ClangFormat
+augroup END
+
 """"""
 " UI "
 """"""
 set number
-" set relativenumber
+set relativenumber
 set cursorline
 set virtualedit=onemore
 set showmatch
@@ -135,22 +138,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " colors
 colorscheme nord
-
-" highlight Normal ctermbg=NONE guibg=NONE
-" highlight NonText ctermbg=NONE guibg=NONE
-" highlight LineNr ctermbg=NONE guibg=NONE
-" highlight Folded ctermbg=NONE guibg=NONE
-" highlight EndOfBuffer ctermbg=NONE guibg=NONE
-" highlight Comment ctermbg=NONE guibg=NONE
-" highlight Statement ctermbg=NONE guibg=NONE
-" highlight Identifier ctermbg=NONE guibg=NONE
-" highlight Preproc ctermbg=NONE guibg=NONE
-" highlight Type ctermbg=NONE guibg=NONE
-" highlight Constant ctermbg=NONE guibg=NONE
-" highlight Special ctermbg=NONE guibg=NONE
-" highlight Conditional ctermbg=NONE guibg=NONE
-" highlight Repeat ctermbg=NONE guibg=NONE
-" highlight Exception ctermbg=NONE guibg=NONE
 
 " hide tmux bar
 " if !has('gui_running') && $TMUX !=# ''
@@ -183,6 +170,16 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 let g:vimtex_compiler_latexmk = { 'continuous' : 0 }
 let g:vimtex_quickfix_open_on_warning = 0
 let g:tex_conceal = ''
+function! _DoAstyle()
+    silent! !latexmk "%:t"
+    silent! !latexmk -c "%:t"
+    echo "compile finished!"
+endfunction
+command! DoAstyle call _DoAstyle()
+augroup save_compile_and_clean
+    autocmd!
+    autocmd BufWritePost *.tex :DoAstyle
+augroup END
 
 """"""""""
 " format "
@@ -190,12 +187,15 @@ let g:tex_conceal = ''
 let g:clang_format#detect_style_file=1
 
 """"""""
-" Misc "
+" Plug "
 """"""""
 
 " fzf
 let g:fzf_action = {
   \ 'enter': 'tab split'}
+
+" nerdtree
+nnoremap <silent> <Leader>tn :NERDTreeToggle<CR>
 
 " nnn
 nnoremap <leader>n :NnnPicker %:p:h<CR>
@@ -203,3 +203,25 @@ let g:nnn#action = {
       \ '<c-t>': 'tab split',
       \ '<c-s>': 'split',
       \ '<c-v>': 'vsplit' }
+
+" vim-gitgutter
+set updatetime=100
+
+" vim-expand-region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+"""""""""""""
+" Functions "
+"""""""""""""
+
+" vp doesn't replace paste buffer
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()

@@ -1,6 +1,11 @@
 # Path
 export PATH=$PATH:/opt/homebrew/bin/
 
+# LLVM
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/llvm/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include"
+
 # Auto init enhancd
 autoload -Uz compinit
 compinit
@@ -82,7 +87,7 @@ esac
 c() {
   case ${OSTYPE} in
     darwin*)
-      cd ~/Google\ Drive
+      cd ~/Google\ Drive/My\ Drive
       ;;
     *)
       cd
@@ -90,10 +95,6 @@ c() {
   esac
   dir=$(fd . -H --ignore-file ~/.config/git/ignore --type d | fzf) &&
   cd "$dir"
-}
-
-vc() {
-  nvim `find . -type f | fzf`
 }
 
 v() {
@@ -111,28 +112,13 @@ v() {
 o() {
   case ${OSTYPE} in
     darwin*)
-#      cd ~/Google\ Drive/My\ Drive
-      ;;
-    *)
-      cd
-      ;;
-  esac
-  open `find . -type f | fzf`
-}
-
-od() {
-  local dir
-  case ${OSTYPE} in
-    darwin*)
       cd ~/Google\ Drive/My\ Drive
       ;;
     *)
       cd
       ;;
   esac
-  dir=$(find ${1:-.} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  open "$dir"
+  open `find . | fzf`
 }
 
 r() {
@@ -153,3 +139,16 @@ case ${OSTYPE} in
   *)
     ;;
 esac
+
+# ctrl-z to return vim
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z

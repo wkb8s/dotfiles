@@ -11,15 +11,14 @@
 /Shared Drives/
 /.vim/
 /.zsh/
-/.local/
-
-# Git
 /.git/
+/.local/
+/.config/
+/src/
 
 # C language
 *.out
 *.o
-test.*
 
 # Latex
 *.dvi
