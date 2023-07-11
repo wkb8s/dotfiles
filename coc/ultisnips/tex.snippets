@@ -9,16 +9,28 @@ $1
 \end{document}
 endsnippet
 
-snippet sse "section"
+snippet se "section"
 \section{$1}$2
 endsnippet
 
-snippet sss "subsection"
+snippet ss "subsection"
 \subsection{$1}$2
 endsnippet
 
-snippet ss2 "subsubsection"
+snippet s2 "subsubsection"
 \subsubsection{$1}$2
+endsnippet
+
+snippet nse "section (neglect)"
+\section*{$1}$2
+endsnippet
+
+snippet nss "subsection (neglect)"
+\subsection*{$1}$2
+endsnippet
+
+snippet ns2 "subsubsection (neglect)"
+\subsubsection*{$1}$2
 endsnippet
 
 snippet equation "equation"
@@ -31,7 +43,29 @@ endsnippet
 snippet goodnotes "include goodnotes"
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\textwidth]{../../goodnotes/images/$1}
+  \includegraphics[width=0.7\textwidth]{../../goodnotes/images/$1}
   \caption{$2}
 \end{figure}
+endsnippet
+
+snippet figure "figure"
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{images/$1}
+  \caption{}
+  %\label{fig:}
+\end{figure}
+endsnippet
+
+snippet table "table"
+\begin{table}[H]
+  \centering
+  \caption{}
+  \includegraphics[width=0.7\textwidth]{images/$1}
+  %\label{fig:}
+\end{table}
+endsnippet
+
+snippet fn "footnote"
+\protect\footnotemark\footnotetext{$1}
 endsnippet

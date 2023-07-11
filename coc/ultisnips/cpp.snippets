@@ -1,0 +1,108 @@
+snippet competitive "competitive programming"
+#include <bits/stdc++.h>
+#define rep(i, n) for (int i = 0; i < (int)(n); i++)
+using namespace std;
+using ll = long long;
+struct Point {
+  int x;
+  int y;
+};
+struct Edge {
+  int to;
+  int weight;
+  Edge(int t, int w) : to(t), weight(w) {}
+};
+using Graph           = vector<vector<int>>;
+using WeightenedGraph = vector<vector<Edge>>;
+
+//----------------------------------------------------
+
+int main() {
+  $0
+}
+endsnippet
+
+snippet dfs "depth first search"
+// need "seen.assign(N, false);" before call
+vector<bool> seen;
+void dfs(const Graph &G, int v) {
+  seen[v] = true;
+
+  for (auto next_v : G[v]) {
+		if (seen[next_v]) continue;
+		dfs(G, next_v);
+  }
+}
+endsnippet
+
+snippet dfs_grid "depth first search grid ver."
+void dfs_grid(Graph &G, int x, int y) {
+  G[x][y] = SEEN;
+
+  for (int dh = -1; dh <= 1; dh++) {
+    for (int dw = -1; dw <= 1; dw++) {
+      int nh = x + dh, nw = y + dw;
+      if (nh < 0 || nh >= h || nw < 0 || nw >= w)
+        continue;
+      if (G[nh][nw] == LAND)
+        dfs_grid(G, nh, nw);
+    }
+  }
+}
+endsnippet
+
+snippet bfs "breadth first search (return set of minimum distance from `v_init`)"
+vector<int> bfs(Graph &G, int v, int num_v) {
+  vector<int> dist(num_v, -1);
+  queue<int> que;
+  dist[v] = 0;
+  que.push(v);
+
+  while (!que.empty()) {
+    int v = que.front();
+    que.pop();
+
+    for (int nv : G[v]) {
+      if (dist[nv] != -1)
+        continue;
+
+      dist[nv] = dist[v] + 1;
+      que.push(nv);
+    }
+  }
+  return dist;
+}
+endsnippet
+
+snippet bfs_grid "breadth first search grid ver. (return set of minimum distance from `v`)"
+vector<vector<int>> bfs_grid(Graph &G, Point v) {
+  vector<vector<int>> dist(H, vector<int>(W));
+  rep(i, H) rep(j, W) dist[i][j] = -1;
+  queue<Point> que;
+
+  dist[v.x][v.y] = 0;
+  que.push(v);
+
+  while (!que.empty()) {
+    Point p = que.front();
+    que.pop();
+
+    for (int dx = -1; dx <= 1; dx++) {
+      for (int dy = -1; dy <= 1; dy++) {
+        int nx = p.x + dx, ny = p.y + dy;
+        Point np = {nx, ny};
+        if (nx < 0 || nx >= H || ny < 0 || ny >= W)
+          continue;
+        if (dist[nx][ny] != -1 || G[nx][ny] == 'WALL') // need rewrite
+          continue;
+        if (dx * dy != 0) // move only {up, down, right, left}
+          continue;
+
+        dist[nx][ny] = dist[p.x][p.y] + 1;
+        que.push(np);
+      }
+    }
+  }
+  return dist;
+}
+endsnippet

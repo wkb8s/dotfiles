@@ -14,7 +14,7 @@ AlwaysBreakBeforeMultilineStrings: true
 BinPackArguments: true
 BinPackParameters: true
 BreakBeforeBraces: 'Attach'
-ColumnLimit: 61
+ColumnLimit: 80
 DerivePointerBinding: true
 IndentCaseLabels: true
 MaxEmptyLinesToKeep: 1

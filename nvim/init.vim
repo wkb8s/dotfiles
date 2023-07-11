@@ -1,9 +1,7 @@
-""""""""""""""""""
-" Initialization "
-""""""""""""""""""
+""""""""""
+" Plugin "
+""""""""""
 call plug#begin('~/.vim/plugged')
-
-" completion and linting
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -11,27 +9,46 @@ Plug 'rhysd/vim-clang-format'
 Plug 'kana/vim-operator-user'
 Plug 'tribela/vim-transparent'
 Plug 'itchyny/lightline.vim'
-" Plug 'joshdick/onedark.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'lervag/vimtex'
 Plug 'mcchrish/nnn.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-commentary'
-Plug 'airblade/vim-rooter'
+" Plug 'airblade/vim-rooter'
 Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'terryma/vim-expand-region'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-
+Plug 'rust-lang/rust.vim'
+Plug 'yuttie/comfortable-motion.vim'
+Plug 'brglng/vim-im-select'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
+
+"""""""""""
+" General "
+"""""""""""
+set noswapfile
+set incsearch
+set mouse=a
+
+" persistent Undo
+if has('persistent_undo')
+  set undodir=~/.vim/undo
+  set undofile
+endif
 
 """""""""""
 " Editing "
 """""""""""
+
 set shiftwidth=4
 set clipboard=unnamed
 set fileformats=unix,dos,mac
 set fileencodings=utf-8,sjis
+
+" im-select
+" let g:im_select_default = 'com.google.inputmethod.Japanese.Roman'
 
 augroup fileTypeIndent
     autocmd!
@@ -56,12 +73,20 @@ augroup END
 
 " basic bindings
 let mapleader="\<Space>"
+let maplocalleader=' '
 inoremap <silent> jj <Esc>
 nnoremap <leader><leader> V
 nnoremap <CR> G
 nnoremap <C-h> gg
 nnoremap ; :
 nnoremap : ;
+nnoremap <Leader>, :tabnew $MYVIMRC<CR>
+
+" emacs
+map <C-a> <ESC>^
+imap <C-a> <ESC>I
+map <C-e> <ESC>$
+imap <C-e> <ESC>A
 
 " cursor control
 inoremap <C-b> <Left>
@@ -121,6 +146,7 @@ set tags=.tags
 augroup save_clang
     autocmd!
     autocmd BufWritePost *.[ch] ClangFormat
+		autocmd BufWritePost *.cpp ClangFormat
 augroup END
 
 """"""
@@ -128,18 +154,25 @@ augroup END
 """"""
 set number
 set relativenumber
-set cursorline
+" set cursorline
 set virtualedit=onemore
 set showmatch
 set termguicolors
+set showtabline=2
+
+" cursor design
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
 
 " set list listchars=space:･
 autocmd BufWritePre * :%s/\s\+$//e
 
-" colors
+" color
 colorscheme nord
 
-" hide tmux bar
+" hide tmux status bar
 " if !has('gui_running') && $TMUX !=# ''
 "     augroup Tmux
 "         autocmd!
@@ -147,33 +180,46 @@ colorscheme nord
 "     augroup END
 " endif
 
-" status bar
-" let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
-" let s:palette.normal.middle = [ [ 'NONE', 'NONE', 'NONE', 'NONE' ] ]
-" let s:palette.inactive.middle = s:palette.normal.middle
-" let s:palette.tabline.middle = s:palette.normal.middle
+" lightline
 let g:lightline = {
-   \ 'colorscheme': 'nord',
-   \ }
+ \ 'colorscheme': 'nord',
+\ 'separator': { 'left': '', 'right': '' },
+\ 'subseparator': { 'left': '', 'right': '' },
+ \ 'mode_map': {
+    \ 'n' : 'N',
+    \ 'i' : 'I',
+    \ 'v' : 'V',
+    \ 'V' : 'VL',
+    \ },
+ \ }
+set noshowmode
+
+ " \ 'subseparator': { 'right': '' },
 
 """"""""""
 " CoCvim "
 """"""""""
+
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 """""""""
 " latex "
 """""""""
 let g:vimtex_compiler_latexmk = { 'continuous' : 0 }
 let g:vimtex_quickfix_open_on_warning = 0
-let g:tex_conceal = ''
+let g:vimtex_syntax_conceal_disable = 1
 function! _DoAstyle()
     silent! !latexmk "%:t"
     silent! !latexmk -c "%:t"
-    echo "compile finished!"
 endfunction
 command! DoAstyle call _DoAstyle()
 augroup save_compile_and_clean
@@ -184,11 +230,19 @@ augroup END
 """"""""""
 " format "
 """"""""""
-let g:clang_format#detect_style_file=1
+
+" C
+let g:clang_format#detect_style_file = 1
+
+" Rust
+let g:rustfmt_autosave = 1
 
 """"""""
 " Plug "
 """"""""
+
+" vim-commentary
+vmap <leader>c gc
 
 " fzf
 let g:fzf_action = {
@@ -206,10 +260,20 @@ let g:nnn#action = {
 
 " vim-gitgutter
 set updatetime=100
+let g:gitgutter_sign_added = '✚'
+let g:gitgutter_sign_modified = '➜'
+let g:gitgutter_sign_removed = '✘'
 
 " vim-expand-region
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+
+" comfortable-motion
+" let g:comfortable_motion_interval = 2400.0 / 60
+" let g:comfortable_motion_friction = 100.0
+" let g:comfortable_motion_air_drag = 3.0
+let g:comfortable_motion_friction = 0.0
+let g:comfortable_motion_air_drag = 4.0
 
 """""""""""""
 " Functions "

@@ -17,6 +17,7 @@ case ${OSTYPE} in
 		ln -sf ~/Google\ Drive/My\ Drive/dotfiles/nvim ~/.config/nvim
 		ln -sf ~/Google\ Drive/My\ Drive/dotfiles/git ~/.config/git
 		ln -sf ~/Google\ Drive/My\ Drive/dotfiles/coc ~/.config/coc
+		ln -sf ~/Google\ Drive/My\ Drive/dotfiles/rustfmt ~/.config/rustfmt
 
 		ln -sf ~/Google\ Drive/My\ Drive/dotfiles/.clang-format ~/.clang-format
 		ln -sf ~/Google\ Drive/My\ Drive/dotfiles/.tmux.conf ~/.tmux.conf
@@ -30,6 +31,7 @@ case ${OSTYPE} in
 		ln -sf ~/dotfiles/nvim ~/.config/nvim
 		ln -sf ~/dotfiles/git ~/.config/git
 		ln -sf ~/dotfiles/coc ~/.config/coc
+		ln -sf ~/dotfiles/rustfmt ~/.config/rustfmt
 
 		ln -sf ~/dotfiles/.clang-format ~/.clang-format
 		ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
