@@ -1,6 +1,6 @@
 snippet competitive "competitive programming"
 #include <bits/stdc++.h>
-#define rep(i, n) for (int i = 0; i < (int)(n); i++)
+#define rep(i, n) for (int i = 0; i < (int)n; i++)
 using namespace std;
 using ll = long long;
 struct Point {
@@ -8,14 +8,19 @@ struct Point {
   int y;
 };
 struct Edge {
+  int from;
   int to;
-  int weight;
-  Edge(int t, int w) : to(t), weight(w) {}
+  int cost;
+  bool operator<(const Edge &other) const { return (cost < other.cost); }
 };
-using Graph           = vector<vector<int>>;
-using WeightenedGraph = vector<vector<Edge>>;
+priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>>
+    Q;
+using Graph         = vector<vector<int>>;
+double pi           = 3.141592653589793238;
+const long long INF = (1LL << 60);
+const int MOD = 1000000007;
 
-//----------------------------------------------------
+//---------------------------------------------------------------------------
 
 int main() {
   $0
@@ -104,5 +109,143 @@ vector<vector<int>> bfs_grid(Graph &G, Point v) {
     }
   }
   return dist;
+}
+endsnippet
+
+snippet dijkstra "dijkstra"
+// G is vector<vector<pair<int, int>>>
+// G must be difined like Graph G(V)
+vector<int> dijkstra(Graph &G, int num_vertex, int start_index) {
+  vector<int> dist(num_vertex, INT_MAX);
+
+  // (dist, num_edge)
+  Q.push(make_pair(0, start_index));
+  dist[start_index] = 0;
+  while (!Q.empty()) {
+    int pos = Q.top().second;
+    Q.pop();
+
+    for (int i = 0; i < G[pos].size(); i++) {
+      int to = G[pos][i].first, cost = G[pos][i].second;
+      if (dist[to] > dist[pos] + cost) {
+        dist[to] = dist[pos] + cost;
+        Q.push(make_pair(dist[to], to));
+      }
+    }
+  }
+  return dist;
+}
+endsnippet
+
+snippet warshall_floyd "warshall_floyd"
+// 'dist' is adjacency matrix
+// return true if negative cycle exists
+bool warshall_floyd(vector<vector<long long>> &dist) {
+  const size_t num_vertex = dist.size();
+  for (size_t i = 0; i < num_vertex; i++) {         // waypoint
+    for (size_t from = 0; from < num_vertex; from++) { // start
+      for (size_t to = 0; to < num_vertex; to++) {     // destination
+        if ((dist[from][i] < INF) && (dist[i][to] < INF))
+          dist[from][to] = min(dist[from][to], dist[from][i] + dist[i][to]);
+      }
+    }
+  }
+
+  for (size_t i = 0; i < num_vertex; i++) {
+    if (dist[i][i] < 0)
+      return true;
+  }
+  return false;
+}
+endsnippet
+
+snippet unionfind "union find tree"
+struct union_find {
+  vector<int> par; // par[i] : parent of node i
+  vector<int> rank;
+
+  // initialize : all nodes are roots
+  UnionFind(int N) : par(N), rank(N) {
+    for (size_t i = 0; i < (size_t)N; i++) {
+      par[i]  = i;
+      rank[i] = 0;
+    }
+  }
+
+  // root(x) : root of node x
+  // find root by recursive search
+  int root(int x) {
+    if (par[x] == x) {
+      return x;
+    }
+    // path compression
+    return par[x] = root(par[x]);
+  }
+
+  void unite(int x, int y) {
+    int rx = root(x);
+    int ry = root(y);
+    if (rx == ry)
+      return;
+
+    if (rank[rx] < rank[ry]) {
+      par[rx] = ry;
+    } else {
+      par[ry] = rx;
+      if (rank[rx] == rank[ry])
+        rank[rx]++;
+    }
+  }
+
+  bool same(int x, int y) {
+    int rx = root(x);
+    int ry = root(y);
+    return rx == ry;
+  }
+};
+endsnippet
+
+snippet kruskal "kruskal"
+// return MST's total cost
+long long kruskal(vector<Edge> edges, int V) {
+  sort(edges.begin(), edges.end());
+  UnionFind tree(V);
+  ll sum = 0;
+
+  for (auto &edge : edges) {
+    if (!tree.same(edge.from, edge.to)) {
+      tree.unite(edge.from, edge.to);
+      sum += edge.cost;
+    }
+  }
+
+  return sum;
+}
+endsnippet
+
+snippet com "com"
+
+const int MAX = 510000;
+// fac[n] : n!, finv[n] : (n!)^(-1),
+long long fac[MAX], finv[MAX], inv[MAX];
+
+// make table
+void com_init() {
+  fac[0] = fac[1] = 1;
+  inv[1]          = 1;
+  finv[0] = finv[1] = 1;
+  for (int i = 2; i < MAX; i++) {
+    fac[i]  = fac[i - 1] * i % MOD;
+    inv[i]  = MOD - inv[MOD % i] * (MOD / i) % MOD;
+    finv[i] = finv[i - 1] * inv[i] % MOD;
+  }
+}
+
+long long com(int n, int k) {
+  if (n < k)
+    return 0;
+  if (n < 0 || k < 0)
+    return 0;
+  return fac[n] * (finv[k] * finv[n - k] % MOD) % MOD;
 }
 endsnippet

@@ -1,11 +1,14 @@
 \usepackage{amsmath,amsfonts,bm,siunitx,here,url,listings,jlisting,graphicx,tcolorbox,pdfpages,hyperref,ascolorbox}
 %tcolorboxとgraphicxを併用する際はグローバルでdvipdfmxを指定すること
 
+% 余白
+% \usepackage[margin=1.0in]{geometry}
+
 %タイトル作成
 \newcommand{\ttl}[1]{
   \title{{#1}}
   \author{Daiki Wakabayashi\thanks{Senior, Department of Information and Computer Science, 62021577}}
-  \date{\today}
+  \date{}
   \maketitle
 }
 
@@ -21,7 +24,7 @@
 \setcounter{tocdepth}{3}
 
 %ソースコードの設定
-\renewcommand{\lstlistingname}{Code}
+\renewcommand{\lstlistingname}{Listing}
 \lstset{
   basicstyle={\ttfamily},
   identifierstyle={\small},

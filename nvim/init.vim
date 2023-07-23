@@ -48,7 +48,7 @@ set fileformats=unix,dos,mac
 set fileencodings=utf-8,sjis
 
 " im-select
-" let g:im_select_default = 'com.google.inputmethod.Japanese.Roman'
+let g:im_select_default = 'com.google.inputmethod.Japanese.Roman'
 
 augroup fileTypeIndent
     autocmd!
@@ -76,7 +76,7 @@ let mapleader="\<Space>"
 let maplocalleader=' '
 inoremap <silent> jj <Esc>
 nnoremap <leader><leader> V
-nnoremap <CR> G
+nnoremap <CR> Gzz
 nnoremap <C-h> gg
 nnoremap ; :
 nnoremap : ;
@@ -217,15 +217,15 @@ nmap <silent> gr <Plug>(coc-references)
 let g:vimtex_compiler_latexmk = { 'continuous' : 0 }
 let g:vimtex_quickfix_open_on_warning = 0
 let g:vimtex_syntax_conceal_disable = 1
-function! _DoAstyle()
-    silent! !latexmk "%:t"
-    silent! !latexmk -c "%:t"
-endfunction
-command! DoAstyle call _DoAstyle()
-augroup save_compile_and_clean
-    autocmd!
-    autocmd BufWritePost *.tex :DoAstyle
-augroup END
+" function! _DoAstyle()
+"     silent! !latexmk"%:t"
+"     silent! !latexmk -c"%:t"
+" endfunction
+" command! DoAstyle call _DoAstyle()
+" augroup save_compile_and_clean
+"     autocmd!
+"     autocmd BufWritePost *.tex :DoAstyle
+" augroup END
 
 """"""""""
 " format "
