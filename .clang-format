@@ -24,3 +24,4 @@ SpaceInEmptyParentheses: false
 SpacesBeforeTrailingComments: 1
 SpacesInParentheses: false
 Standard: 'Cpp11'
+SortIncludes: false
