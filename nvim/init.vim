@@ -158,13 +158,14 @@ set relativenumber
 set virtualedit=onemore
 set showmatch
 set termguicolors
-set showtabline=2
+" set showtabline=2
+set shortmess+=I "disable start menu"
 
 " cursor design
-let &t_ti.="\e[1 q"
+" let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
-let &t_te.="\e[0 q"
+" let &t_te.="\e[0 q"
 
 " set list listchars=space:･
 autocmd BufWritePre * :%s/\s\+$//e
@@ -289,3 +290,11 @@ function! s:Repl()
   return "p@=RestoreRegister()\<cr>"
 endfunction
 vmap <silent> <expr> p <sid>Repl()
+
+" restore last cursor place
+if has("autocmd")
+    autocmd BufReadPost *
+    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \   exe "normal! g'\"" |
+    \ endif
+endif

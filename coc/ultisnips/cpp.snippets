@@ -1,8 +1,21 @@
-snippet competitive "competitive programming"
+snippet main "template for competitive programming"
 #include <bits/stdc++.h>
-#define rep(i, n) for (int i = 0; i < (int)n; i++)
 using namespace std;
-using ll = long long;
+
+/* alias */
+using ll   = long long;
+using vi   = vector<int>;
+using vll  = vector<long long>;
+using vvi  = vector<vi>;
+using vvll = vector<vll>;
+using vs   = vector<string>;
+using pii  = pair<int, int>;
+
+/* rep macro */
+#define irep(i, a, n) for (long long i = (a); i < (long long)(n); i++)
+#define rep(i, n) irep(i, 0, n)
+
+/* struct */
 struct Point {
   int x;
   int y;
@@ -15,10 +28,12 @@ struct Edge {
 };
 priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>>
     Q;
-using Graph         = vector<vector<int>>;
-double pi           = 3.141592653589793238;
-const long long INF = (1LL << 60);
-const int MOD = 1000000007;
+
+/* const */
+double pi              = 3.141592653589793238;
+const long long INF_LL = (1LL << 60);
+const int INF_INT      = 1 << 29;
+const int MOD          = 1000000007;
 
 //---------------------------------------------------------------------------
 

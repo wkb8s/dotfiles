@@ -16,6 +16,12 @@
 /.config/
 /src/
 
+# ctags
+.tags
+
+# git
+.gitignore
+
 # C language
 *.out
 *.o
