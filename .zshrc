@@ -25,9 +25,13 @@ compinit
 source ~/.zsh/enhancd/init.sh
 
 # Prompt
-fpath+=($HOME/.zsh/pure)
-autoload -U promptinit; promptinit
-prompt pure
+# use pure prompt
+# fpath+=($HOME/.zsh/pure)
+# autoload -U promptinit; promptinit
+# prompt pure
+# use simplest prompt
+precmd() { print "" } # add new line before print prompt
+PROMPT='%F{magenta}❯%f '
 
 # vi-mode
 # bindkey -v

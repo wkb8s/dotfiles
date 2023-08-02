@@ -112,7 +112,7 @@ nnoremap <Leader>Q :q!<CR>
 nnoremap <Leader>z :noh<CR>
 
 " tab
-" nnoremap <Leader>t :tabnew<CR>
+nnoremap <Leader>t :tabnew<CR>
 map <F3> gT
 map <F4> gt
 nnoremap <C-j> gT
@@ -152,13 +152,13 @@ augroup END
 """"""
 " UI "
 """"""
-set number
-set relativenumber
+" set number
+" set relativenumber
 " set cursorline
 set virtualedit=onemore
 set showmatch
 set termguicolors
-" set showtabline=2
+set showtabline=0
 set shortmess+=I "disable start menu"
 
 " cursor design
@@ -180,6 +180,12 @@ colorscheme nord
 "         autocmd VimEnter,VimLeave * silent !tmux set status
 "     augroup END
 " endif
+
+" hide status bar
+set laststatus=0
+
+" hide command-line bar when not used
+set cmdheight=0
 
 " lightline
 let g:lightline = {
@@ -296,5 +302,42 @@ if has("autocmd")
     autocmd BufReadPost *
     \ if line("'\"") > 0 && line ("'\"") <= line("$") |
     \   exe "normal! g'\"" |
+		\   exe "normal! zz" |
     \ endif
 endif
+
+" autosave
+autocmd BufNewFile,BufRead *.md :autocmd TextChanged,TextChangedI <buffer> silent write
+autocmd BufNewFile,BufRead *.tex :autocmd TextChanged,TextChangedI <buffer> silent write
+autocmd BufNewFile,BufRead *.txt :autocmd TextChanged,TextChangedI <buffer> silent write
+
+" open tabs in fzf
+nnoremap <leader>to :FZFTabOpen<CR>
+command! FZFTabOpen call s:FZFTabOpenFunc()
+function! s:FZFTabOpenFunc()
+    call fzf#run({
+            \ 'source':  s:GetTabList(),
+            \ 'sink':    function('s:TabListSink'),
+            \ 'options': '-m -x +s',
+            \ 'down':    '40%'})
+endfunction
+function! s:GetTabList()
+    let s:tabList = execute('tabs')
+    let s:textList = []
+    for tabText  in split(s:tabList, '\n')
+        let s:tabPageText = matchstr(tabText, '^Tab page')
+        if !empty(s:tabPageText)
+            let s:pageNum = matchstr(tabText, '[0-9]*$')
+        else
+            let s:textList = add(s:textList, printf('%d %s',
+                \ s:pageNum,
+                \ tabText,
+                \   ))
+        endif
+    endfor
+    return s:textList
+endfunction
+function! s:TabListSink(line)
+    let parts = split(a:line, '\s')
+    execute 'normal ' . parts[0] . 'gt'
+endfunction
