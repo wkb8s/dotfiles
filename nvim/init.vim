@@ -23,6 +23,11 @@ Plug 'rust-lang/rust.vim'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'brglng/vim-im-select'
 Plug 'sheerun/vim-polyglot'
+Plug 'mbbill/undotree'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+Plug 'junegunn/rainbow_parentheses.vim'
 call plug#end()
 
 """""""""""
@@ -81,6 +86,16 @@ nnoremap <C-h> gg
 nnoremap ; :
 nnoremap : ;
 nnoremap <Leader>, :tabnew $MYVIMRC<CR>
+nnoremap O o
+nnoremap o :<C-u>call append(expand('.'), '')<Cr>j
+
+" IME off
+" nnoremap i :set iminsert=0<CR>i
+" nnoremap I :set iminsert=0<CR>I
+" nnoremap a :set iminsert=0<CR>a
+" nnoremap A :set iminsert=0<CR>A
+inoremap <ESC> <ESC>:set iminsert=0<CR>
+inoremap <C-c> <ESC>:set iminsert=0<CR>
 
 " emacs
 map <C-a> <ESC>^
@@ -136,6 +151,9 @@ nnoremap <leader>l <C-w>l
 " fzf mappings
 nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <leader>r :Rg<CR>
+
+" undo tree
+nnoremap <leader>u :UndotreeToggle<cr>
 
 " ctags
 noremap <Leader>b <C-t>
@@ -282,6 +300,24 @@ vmap <C-v> <Plug>(expand_region_shrink)
 let g:comfortable_motion_friction = 0.0
 let g:comfortable_motion_air_drag = 4.0
 
+" undo tree
+let g:undotree_ShortIndicators = 1
+let g:undotree_SetFocusWhenToggle = 1
+
+" auto format by vim prettier
+augroup fmt
+autocmd!
+autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
+augroup END
+
+" rainbow parentheses
+let g:rainbow#max_level = 16
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+augroup rainbow_lisp
+  autocmd!
+  autocmd BufRead *.c,*.cpp,*.py :RainbowParentheses
+augroup END
+
 """""""""""""
 " Functions "
 """""""""""""
@@ -307,9 +343,10 @@ if has("autocmd")
 endif
 
 " autosave
-autocmd BufNewFile,BufRead *.md :autocmd TextChanged,TextChangedI <buffer> silent write
-autocmd BufNewFile,BufRead *.tex :autocmd TextChanged,TextChangedI <buffer> silent write
-autocmd BufNewFile,BufRead *.txt :autocmd TextChanged,TextChangedI <buffer> silent write
+" this is inconvenient when undo/redo
+" autocmd BufNewFile,BufRead *.md :autocmd TextChanged,TextChangedI <buffer> silent write
+" autocmd BufNewFile,BufRead *.tex :autocmd TextChanged,TextChangedI <buffer> silent write
+" autocmd BufNewFile,BufRead *.txt :autocmd TextChanged,TextChangedI <buffer> silent write
 
 " open tabs in fzf
 nnoremap <leader>to :FZFTabOpen<CR>
