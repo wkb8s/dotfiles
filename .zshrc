@@ -59,7 +59,8 @@ alias ga='git add .'
 alias gc='git commit -m'
 alias gs='git push'
 alias gl='git pull'
-alias ls='ls -F -G --color=auto'
+# alias ls='ls -F -G --color=auto'
+alias ls='lsd'
 alias ll='ls -l'
 # alias l='ls'
 alias la='ls -a'
@@ -90,6 +91,8 @@ case ${OSTYPE} in
     ;;
 esac
 
+# bat command color
+export BAT_THEME="Nord"
 
 # Functions
 

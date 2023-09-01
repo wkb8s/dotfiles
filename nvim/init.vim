@@ -1,3 +1,24 @@
+" skip reading standard plug-in
+" accelerate
+let g:did_install_default_menus = 1
+let g:did_install_syntax_menu   = 1
+let g:did_indent_on             = 1
+let g:did_load_filetypes        = 1
+let g:did_load_ftplugin         = 1
+let g:loaded_2html_plugin       = 1
+let g:loaded_gzip               = 1
+let g:loaded_man                = 1
+let g:loaded_matchit            = 1
+let g:loaded_matchparen         = 1
+let g:loaded_netrwPlugin        = 1
+let g:loaded_remote_plugins     = 1
+let g:loaded_shada_plugin       = 1
+let g:loaded_spellfile_plugin   = 1
+let g:loaded_tarPlugin          = 1
+let g:loaded_tutor_mode_plugin  = 1
+let g:loaded_zipPlugin          = 1
+let g:skip_loading_mswin        = 1
+
 """"""""""
 " Plugin "
 """"""""""
@@ -8,7 +29,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'kana/vim-operator-user'
 Plug 'tribela/vim-transparent'
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'lervag/vimtex'
 Plug 'mcchrish/nnn.vim'
@@ -18,16 +39,30 @@ Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 Plug 'jiangmiao/auto-pairs'
 Plug 'terryma/vim-expand-region'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+" Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'rust-lang/rust.vim'
-Plug 'yuttie/comfortable-motion.vim'
+" Plug 'yuttie/comfortable-motion.vim'
 Plug 'brglng/vim-im-select'
 Plug 'sheerun/vim-polyglot'
 Plug 'mbbill/undotree'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install --frozen-lockfile --production',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
-Plug 'junegunn/rainbow_parentheses.vim'
+" Plug 'prettier/vim-prettier', {
+"   \ 'do': 'yarn install --frozen-lockfile --production',
+"   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+" Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'ryicoh/deepl.vim'
+" Plug 'ryanoasis/vim-devicons'
+Plug 'vim-denops/denops.vim'
+Plug 'lambdalisue/kensaku.vim'
+Plug 'lambdalisue/kensaku-search.vim'
+Plug 'rhysd/clever-f.vim'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'mattn/vim-lsp-settings'
+" Plug 'vim-denops/denops.vim'
+" Plug 'vim-skk/skkeleton'
+Plug 'dense-analysis/ale'
+" Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+" Plug 'junegunn/vim-easy-align'
+Plug 'dhruvasagar/vim-table-mode'
 call plug#end()
 
 """""""""""
@@ -51,9 +86,11 @@ set shiftwidth=4
 set clipboard=unnamed
 set fileformats=unix,dos,mac
 set fileencodings=utf-8,sjis
+set scrolloff=999
 
 " im-select
-let g:im_select_default = 'com.google.inputmethod.Japanese.Roman'
+" let g:im_select_default = 'com.google.inputmethod.Japanese.Roman'
+let g:im_select_default = 'com.apple.keylayout.ABC'
 
 augroup fileTypeIndent
     autocmd!
@@ -72,6 +109,38 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead *.sh setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
+" spell checking
+" set spelllang=en,cjk
+" fun! s:SpellConf()
+"   redir! => syntax
+"   silent syntax
+"   redir END
+"   set spell
+"   if syntax =~? '/<comment\>'
+"     syntax spell default
+"     syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent containedin=Comment contained
+"   else
+"     syntax spell toplevel
+"     syntax match SpellMaybeCode /\<\h\l*[_A-Z]\h\{-}\>/ contains=@NoSpell transparent
+"   endif
+"   syntax cluster Spell add=SpellNotAscii,SpellMaybeCode
+" endfunc
+" augroup spell_check
+"   autocmd!
+"   autocmd BufReadPost,BufNewFile,Syntax * call s:SpellConf()
+" augroup END
+
+" toggle spell checking
+" nnoremap ts :call SpellToggle()<CR>
+" function! SpellToggle()
+"     setlocal spell!
+"     if exists("g:syntax_on")
+"         syntax off
+"     else
+"         syntax on
+"     endif
+" endfunction
+
 """"""""""""""""
 " key bindings "
 """"""""""""""""
@@ -81,13 +150,19 @@ let mapleader="\<Space>"
 let maplocalleader=' '
 inoremap <silent> jj <Esc>
 nnoremap <leader><leader> V
-nnoremap <CR> Gzz
+" nnoremap <CR> Gzz
+nnoremap <CR> G
 nnoremap <C-h> gg
 nnoremap ; :
 nnoremap : ;
 nnoremap <Leader>, :tabnew $MYVIMRC<CR>
 nnoremap O o
 nnoremap o :<C-u>call append(expand('.'), '')<Cr>j
+
+" move beyond tail of line
+set whichwrap=b,s,[,],<,>
+nnoremap h <Left>
+nnoremap l <Right>
 
 " IME off
 " nnoremap i :set iminsert=0<CR>i
@@ -106,12 +181,14 @@ imap <C-e> <ESC>A
 " cursor control
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
-nnoremap j gjzz
-nnoremap k gkzz
+" nnoremap j gjzz
+" nnoremap k gkzz
+nnoremap j gj
+nnoremap k gk
 nnoremap <Down> gj
 nnoremap <Up>   gk
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
+" nnoremap <C-d> <C-d>zz
+" nnoremap <C-u> <C-u>zz
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
@@ -135,10 +212,10 @@ nnoremap <C-k> gt
 
 " search
 set ignorecase
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap * *zz
-nnoremap # #zz
+" nnoremap n nzz
+" nnoremap N Nzz
+" nnoremap * *zz
+" nnoremap # #zz
 
 " split views
 nnoremap <Leader>- :split<CR>
@@ -173,11 +250,15 @@ augroup END
 " set number
 " set relativenumber
 " set cursorline
+" hi clear CursorLine
 set virtualedit=onemore
 set showmatch
 set termguicolors
 set showtabline=0
 set shortmess+=I "disable start menu"
+
+" syntax highlight
+" set synmaxcol=500
 
 " cursor design
 " let &t_ti.="\e[1 q"
@@ -206,17 +287,17 @@ set laststatus=0
 set cmdheight=0
 
 " lightline
-let g:lightline = {
- \ 'colorscheme': 'nord',
-\ 'separator': { 'left': '', 'right': '' },
-\ 'subseparator': { 'left': '', 'right': '' },
- \ 'mode_map': {
-    \ 'n' : 'N',
-    \ 'i' : 'I',
-    \ 'v' : 'V',
-    \ 'V' : 'VL',
-    \ },
- \ }
+" let g:lightline = {
+"  \ 'colorscheme': 'nord',
+" \ 'separator': { 'left': '', 'right': '' },
+" \ 'subseparator': { 'left': '', 'right': '' },
+"  \ 'mode_map': {
+"     \ 'n' : 'N',
+"     \ 'i' : 'I',
+"     \ 'v' : 'V',
+"     \ 'V' : 'VL',
+"     \ },
+"  \ }
 set noshowmode
 
  " \ 'subseparator': { 'right': '' },
@@ -297,26 +378,65 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " let g:comfortable_motion_interval = 2400.0 / 60
 " let g:comfortable_motion_friction = 100.0
 " let g:comfortable_motion_air_drag = 3.0
-let g:comfortable_motion_friction = 0.0
-let g:comfortable_motion_air_drag = 4.0
+
+" let g:comfortable_motion_friction = 0.0
+" let g:comfortable_motion_air_drag = 4.0
+
+" indentLine
+" disable conceal
+let g:indentLine_conceallevel = 0
 
 " undo tree
 let g:undotree_ShortIndicators = 1
 let g:undotree_SetFocusWhenToggle = 1
 
 " auto format by vim prettier
-augroup fmt
-autocmd!
-autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
-augroup END
+" augroup fmt
+" autocmd!
+" autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
+" augroup END
 
 " rainbow parentheses
-let g:rainbow#max_level = 16
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-augroup rainbow_lisp
-  autocmd!
-  autocmd BufRead *.c,*.cpp,*.py :RainbowParentheses
-augroup END
+" let g:rainbow#max_level = 16
+" let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+" augroup rainbow_lisp
+"   autocmd!
+"   autocmd BufRead *.c,*.cpp,*.py :RainbowParentheses
+" augroup END
+
+" deepl
+let g:deepl#endpoint = "https://api-free.deepl.com/v2/translate"
+let g:deepl#auth_key = "7b43347b-ff79-aa3f-7b44-0542a98af1a9:fx"
+" replace a visual selection
+vmap tj <Cmd>call deepl#v("JA")<CR>
+vmap te <Cmd>call deepl#v("EN")<CR>
+" translate a current line and display on a new line
+nmap tj yypV<Cmd>call deepl#v("EN")<CR>
+nmap te yypV<Cmd>call deepl#v("JA")<CR>
+
+" kensaku.vim
+cnoremap <CR> <Plug>(kensaku-search-replace)<CR>
+
+" clever-f.vim
+let g:clever_f_ignore_case = 1
+let g:clever_f_smart_case = 1
+let g:clever_f_chars_match_any_signs = ';'
+let g:clever_f_use_migemo = 1
+
+" skkeleton
+" call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L' })
+" imap <C-j> <Plug>(skkeleton-enable)
+" cmap <C-j> <Plug>(skkeleton-enable)
+
+" ale
+let g:ale_linters = {
+ \  'markdown': ['textlint'],
+ \  'latex': ['textlint'],
+ \}
+let g:ale_enabled = 0
+
+" vim-table-mode
+let g:table_mode_corner="|"
 
 """""""""""""
 " Functions "
@@ -338,7 +458,7 @@ if has("autocmd")
     autocmd BufReadPost *
     \ if line("'\"") > 0 && line ("'\"") <= line("$") |
     \   exe "normal! g'\"" |
-		\   exe "normal! zz" |
+		" \   exe "normal! zz" |
     \ endif
 endif
 

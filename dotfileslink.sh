@@ -18,6 +18,9 @@ case ${OSTYPE} in
 		ln -sf ~/Google\ Drive/My\ Drive/dotfiles/git ~/.config/git
 		ln -sf ~/Google\ Drive/My\ Drive/dotfiles/coc ~/.config/coc
 		ln -sf ~/Google\ Drive/My\ Drive/dotfiles/rustfmt ~/.config/rustfmt
+		ln -sf ~/Google\ Drive/My\ Drive/dotfiles/alacritty ~/.config/alacritty
+		ln -sf ~/Google\ Drive/My\ Drive/dotfiles/spacebar ~/.config/spacebar
+		ln -sf ~/Google\ Drive/My\ Drive/dotfiles/skk ~/.skk
 
 		ln -sf ~/Google\ Drive/My\ Drive/dotfiles/.clang-format ~/.clang-format
 		ln -sf ~/Google\ Drive/My\ Drive/dotfiles/.tmux.conf ~/.tmux.conf
@@ -32,6 +35,9 @@ case ${OSTYPE} in
 		ln -sf ~/dotfiles/git ~/.config/git
 		ln -sf ~/dotfiles/coc ~/.config/coc
 		ln -sf ~/dotfiles/rustfmt ~/.config/rustfmt
+		ln -sf ~/dotfiles/alacritty ~/.config/alacritty
+		ln -sf ~/dotfiles/spacebar ~/.config/spacebar
+		ln -sf ~/dotfiles/skk ~/.skk
 
 		ln -sf ~/dotfiles/.clang-format ~/.clang-format
 		ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
