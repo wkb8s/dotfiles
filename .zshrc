@@ -60,12 +60,19 @@ alias gc='git commit -m'
 alias gs='git push'
 alias gl='git pull'
 # alias ls='ls -F -G --color=auto'
-alias ls='lsd'
 alias ll='ls -l'
 # alias l='ls'
 alias la='ls -a'
 alias fzf='fzf --reverse --border'
 alias vim='nvim'
+
+case ${OSTYPE} in
+  darwin*)
+		alias ls='lsd'
+    ;;
+  *)
+    ;;
+esac
 
 # Syntaxhighlighting
 if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
