@@ -59,7 +59,6 @@ alias ga='git add .'
 alias gc='git commit -m'
 alias gs='git push'
 alias gl='git pull'
-# alias ls='ls -F -G --color=auto'
 alias ll='ls -l'
 # alias l='ls'
 alias la='ls -a'
@@ -71,6 +70,7 @@ case ${OSTYPE} in
 		alias ls='lsd'
     ;;
   *)
+		alias ls='ls -F -G --color=auto'
     ;;
 esac
 
