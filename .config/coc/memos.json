@@ -29,7 +29,7 @@
         "sysPrefix": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9",
         "fileHash": "75b39d84116da036be3658fbf4a6b2576f66622caa8f867466a66bba3eefb91cea036289777a60f9fd7c762d4fffc4156cc9919993ae7ff7115e25763074e7ec"
       },
-      "expiry": 1693612134372
+      "expiry": 1694064158066
     },
     "INTERPRETERS_CACHE_v3_CurrentPathService": [
       {
@@ -126,7 +126,7 @@
         "sysPrefix": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9",
         "fileHash": "ae6134e762003b5d938990e003d94578de64f5b7513a6509e3d54df3ab2638b5c05c90749342ac2a0c29d17012f4dbf19e40154b3f7512b9838f9ba30d475473"
       },
-      "expiry": 1693612134370
+      "expiry": 1694064158066
     },
     "/Applications/Xcode.app/Contents/Developer/usr/bin/python3.interpreter.Details.v7": {
       "data": {
@@ -156,14 +156,14 @@
           "displayName": "Python 3.9.6 64-bit"
         }
       },
-      "expiry": 1693612134397
+      "expiry": 1694064158123
     },
     "/Applications/Xcode.app/Contents/Developer/usr/bin/python3.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 3.9.6 64-bit",
         "hash": "75b39d84116da036be3658fbf4a6b2576f66622caa8f867466a66bba3eefb91cea036289777a60f9fd7c762d4fffc4156cc9919993ae7ff7115e25763074e7ec-28f6c4cf5422380612e94266a11de9cc"
       },
-      "expiry": 1693612134384
+      "expiry": 1694064158113
     },
     "/opt/homebrew/bin/python3.11.v3": {
       "data": {
@@ -188,7 +188,7 @@
         "sysPrefix": "/opt/homebrew/opt/python@3.11/Frameworks/Python.framework/Versions/3.11",
         "fileHash": "66c0b5c88ccdfa7ff2ba16843430df5919c1d305c34a80a97eca1ee8e72e09b1c4489a847def52393db2e5fcbba9982217621fc1a54c90209668a7c27746e68d"
       },
-      "expiry": 1693612134369
+      "expiry": 1694064158068
     },
     "/opt/homebrew/bin/python3.v3": {
       "data": {
@@ -213,7 +213,7 @@
         "sysPrefix": "/opt/homebrew/opt/python@3.11/Frameworks/Python.framework/Versions/3.11",
         "fileHash": "80497cdc750a9753d71732d9e26b65c1f470c913cc5dd287802e6a1048ffa96863b7b4cafc39ffac26e265183e74c1c441f9569635c5837645807af01b3aee6b"
       },
-      "expiry": 1693612134368
+      "expiry": 1694151041915
     },
     "INTERPRETERS_CACHE_v3_KnownPathsService": [
       {
@@ -361,14 +361,14 @@
         "displayName": "Python 3.11.4 64-bit",
         "hash": "80497cdc750a9753d71732d9e26b65c1f470c913cc5dd287802e6a1048ffa96863b7b4cafc39ffac26e265183e74c1c441f9569635c5837645807af01b3aee6b-38c49676a6fb7e347d4483fde3ee6cf3"
       },
-      "expiry": 1693612626850
+      "expiry": 1694151041917
     },
     "/usr/bin/python3.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 3.9.6 64-bit",
         "hash": "ae6134e762003b5d938990e003d94578de64f5b7513a6509e3d54df3ab2638b5c05c90749342ac2a0c29d17012f4dbf19e40154b3f7512b9838f9ba30d475473-208b0eab8d6c51318435015a6cef6f31"
       },
-      "expiry": 1693612134382
+      "expiry": 1694064158114
     },
     "InterpreterAutoSeletionRule-system": {
       "architecture": 3,
@@ -419,10 +419,11 @@
           "sysPrefix": "/opt/homebrew/opt/python@3.11/Frameworks/Python.framework/Versions/3.11",
           "fileHash": "80497cdc750a9753d71732d9e26b65c1f470c913cc5dd287802e6a1048ffa96863b7b4cafc39ffac26e265183e74c1c441f9569635c5837645807af01b3aee6b",
           "type": "Unknown",
-          "displayName": "Python 3.11.4 64-bit"
+          "displayName": "Python 3.11.4 64-bit",
+          "__store": true
         }
       },
-      "expiry": 1693612626861
+      "expiry": 1694151041875
     },
     "/usr/bin/python3.interpreter.Details.v7": {
       "data": {
@@ -452,7 +453,7 @@
           "displayName": "Python 3.9.6 64-bit"
         }
       },
-      "expiry": 1693612134392
+      "expiry": 1694064158125
     },
     "InterpreterAutoSeletionRule-cachedInterpreters": {
       "architecture": 3,
