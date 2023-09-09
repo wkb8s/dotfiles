@@ -149,10 +149,10 @@ augroup END
 let mapleader="\<Space>"
 let maplocalleader=' '
 inoremap <silent> jj <Esc>
-nnoremap <leader><leader> V
+" nnoremap <leader><leader> V
 " nnoremap <CR> Gzz
-nnoremap <CR> G
-nnoremap <C-h> gg
+" nnoremap <CR> G
+" nnoremap <C-h> gg
 nnoremap ; :
 nnoremap : ;
 nnoremap <Leader>, :tabnew $MYVIMRC<CR>

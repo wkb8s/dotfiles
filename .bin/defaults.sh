@@ -11,6 +11,13 @@ fi
 #
 # ====================
 
+# speed up pointer speed
+defaults write -g com.apple.trackpad.scaling 31
+
+# speed up key repeat speed
+defaults write -g InitialKeyRepeat -int 10
+defaults write -g KeyRepeat -int 1
+
 # Disable auto-capitalization
 # defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
