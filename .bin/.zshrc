@@ -11,8 +11,9 @@ export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/Users/wakabayashidaiki/Google\ Dr
 # online judge tools
 export PATH=$PATH:~/Library/Python/3.9/bin/
 
-# Path
-export PATH=$PATH:/opt/homebrew/bin/
+# homebrew
+export PATH=$PATH:/opt/homebrew/bin/ # for M1 mac
+export PATH=$PATH:/usr/local/bin/brew # for Intel mac
 
 # LLVM
 export PATH="/usr/local/opt/llvm/bin:$PATH"
