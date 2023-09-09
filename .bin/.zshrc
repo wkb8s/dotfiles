@@ -13,8 +13,8 @@ export PATH=$PATH:~/Library/Python/3.9/bin/
 
 # homebrew
 export PATH=$PATH:/opt/homebrew/bin/ # for M1 mac
-export PATH=$PATH:/usr/local/Homebrew/bin/ # for Intel mac
-export PATH=$PATH:/usr/local/opt/ # for Intel mac: packages
+# export PATH=$PATH:/usr/local/Homebrew/bin/ # for Intel mac
+export PATH=$PATH:/usr/local/bin/ # for Intel mac: packages
 
 # LLVM
 export PATH="/usr/local/opt/llvm/bin:$PATH"

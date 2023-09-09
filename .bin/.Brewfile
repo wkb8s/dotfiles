@@ -1,6 +1,7 @@
 cask_args appdir: "/Applications"
 
 tap "homebrew/cask-fonts"
+tap "koekeishiya/formulae"
 
 brew "defaultbrowser"
 brew "neovim"
