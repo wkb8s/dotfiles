@@ -61,7 +61,7 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # fzf
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-(brew --prefix)/opt/fzf/install
+$(brew --prefix)/opt/fzf/install
 
 # Ctags and tmux
 case ${OSTYPE} in
