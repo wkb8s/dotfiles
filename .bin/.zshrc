@@ -66,6 +66,10 @@ if type "bat" > /dev/null 2>&1; then
     alias cat="bat"
 fi
 
+# enable zsh plugin
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Syntaxhighlighting
 # if [ -f ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
 #   source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
