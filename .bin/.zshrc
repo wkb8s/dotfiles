@@ -60,8 +60,7 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # fzf
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-$(brew --prefix)/opt/fzf/install
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Ctags and tmux
 case ${OSTYPE} in
