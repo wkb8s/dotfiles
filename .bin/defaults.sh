@@ -30,6 +30,14 @@ defaults write -g KeyRepeat -int 1
 # Disable animation at application launch
 # defaults write com.apple.dock launchanim -bool false
 
+# hide dock automatically
+defaults write com.apple.dock autohide -bool true
+# defaults delete com.apple.dock autohide # disable
+
+# disable dock
+defaults write com.apple.dock autohide-delay -float 2; killall Dock
+# defaults delete com.apple.dock autohide-delay; killall Dock # disable
+
 # ====================
 #
 # Finder
