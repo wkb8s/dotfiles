@@ -11,6 +11,8 @@ brew "lsd"
 brew "clang-format"
 brew "tree"
 brew "bat"
+brew "koekeishiya/formulae/yabai"
+brew "koekeishiya/formulae/skhd"
 
 cask "vivaldi"
 cask "alacritty"
