@@ -19,6 +19,7 @@ brew "koekeishiya/formulae/yabai"
 brew "koekeishiya/formulae/skhd"
 
 cask "vivaldi"
+cask "vanilla"
 cask "alacritty"
 cask "1password"
 cask "tailscale"

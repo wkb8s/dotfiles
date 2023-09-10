@@ -7,8 +7,4 @@ $ git clone
 ```
 
 # additional setting
-## fzf
-```
-# To install useful key bindings and fuzzy completion:
-$(brew --prefix)/opt/fzf/install
-```
+- [ここ](vivaldi://experiments/)から, Vivaldi の Custom CSS を有効にする

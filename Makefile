@@ -16,3 +16,7 @@ defaults:
 # Install macOS applications.
 brew:
 	.bin/brew.sh
+
+# Command only need to execute at once
+once:
+	.bin/once.sh
