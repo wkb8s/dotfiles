@@ -305,6 +305,8 @@ set noshowmode
 """"""""""
 " CoCvim "
 """"""""""
+let g:coc_global_extensions = ['coc-snippets', 'coc-rust-analyzer']
+
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice

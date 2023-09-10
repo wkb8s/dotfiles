@@ -3,20 +3,20 @@ all: init link defaults brew
 
 # Set initial preference.
 init:
-	.bin/init.sh
+	bin/init.sh
 
 # Link dotfiles.
 link:
-	.bin/link.sh
+	bin/link.sh
 
 # Set macOS system preferences.
 defaults:
-	.bin/defaults.sh
+	bin/defaults.sh
 
 # Install macOS applications.
 brew:
-	.bin/brew.sh
+	bin/brew.sh
 
 # Command only need to execute at once
 once:
-	.bin/once.sh
+	bin/once.sh
