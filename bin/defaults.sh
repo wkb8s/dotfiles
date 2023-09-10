@@ -48,7 +48,7 @@ defaults write com.apple.dock autohide-delay -float 1000; killall Dock
 # defaults write com.apple.finder DisableAllAnimations -bool true
 
 # Show hidden files by default
-# defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Show files with all extensions
 # defaults write NSGlobalDomain AppleShowAllExtensions -bool true
