@@ -8,6 +8,9 @@ export PATH=$PATH:~/Library/Python/3.9/bin/
 export PATH=$PATH:/opt/homebrew/bin/ # for M1 mac
 export PATH=$PATH:/usr/local/bin/ # for Intel mac
 
+# latex style file directory
+export TEXINPUTS=~/.latex/
+
 # Auto init enhancd
 autoload -Uz compinit
 compinit
