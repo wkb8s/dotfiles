@@ -35,4 +35,4 @@ if ($^O eq 'linux') {
 $clean_ext = "dvi aux fls log synctex.gz fdb_latexmk";
 
 # $aux_dir = "aux";
-$out_dir = "~/Google Drive/My Drive/pdf";
+$out_dir = "pdf";
