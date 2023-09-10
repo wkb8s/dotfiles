@@ -1,0 +1,102 @@
+\usepackage{amsmath,amsfonts,bm,siunitx,here,url,listings,jlisting,graphicx,tcolorbox,pdfpages,hyperref,ascolorbox}
+%tcolorboxとgraphicxを併用する際はグローバルでdvipdfmxを指定すること
+
+% 余白
+% \usepackage[margin=1.0in]{geometry}
+
+%タイトル作成
+\newcommand{\ttl}[1]{
+  \title{{#1}}
+  \author{Daiki Wakabayashi\thanks{Senior, Department of Information and Computer Science, 62021577}}
+  \date{}
+  \maketitle
+}
+
+%脚注の挿入
+\newcommand{\fn}[1]{
+  \protect\footnotemark\footnotetext{#1}
+}
+
+%2段組の際, 中央に線を入れる
+\setlength{\columnseprule}{0.4pt}
+
+%サブサブセクションまで目次に反映させる
+\setcounter{tocdepth}{3}
+
+%ソースコードの設定
+\renewcommand{\lstlistingname}{Listing}
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  %↓コメントアウトでフレームを消せる
+  frame={tb},
+  breaklines=true,
+  %columns=[l]{fullflexible},
+  columns=fixed, %等幅設定
+  basewidth=0.5em, %等幅設定
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+
+%便利なアイコン達
+\newcommand{\kaisetsu}%解説アイコン
+{
+\vskip.1\baselineskip %はじめに半分の空行
+\noindent
+\begin{tikzpicture}[scale=0.2, baseline=2.8pt]
+\draw (3.3,1) node{\textgt{解 説}};
+\draw[thick, rounded corners=3pt,] (0,0)--(6.5,0)--(6.5,2.2)--(0,2.2)--cycle;
+\end{tikzpicture}\;\\}
+\newcommand{\chui}{%注意アイコン
+\vskip.1\baselineskip %はじめに半分の空行
+\noindent
+\begin{tikzpicture}[scale=0.2, baseline=2.8pt]
+\fill (0,0)--(6.5,0)--(6.5,2.2)--(0,2.2);
+\draw (3.3,1) node[white]{\textgt{注意！}};
+\draw[thick] (0,0)--(6.5,0)--(6.5,2.2)--(0,2.2)--cycle;
+\end{tikzpicture}\;\\}
+\newcommand{\hosoku}{%補足アイコン
+\vskip.1\baselineskip %はじめに半分の空行
+\noindent
+\begin{tikzpicture}[scale=0.2, baseline=2.8pt]
+\draw (6,1) node{\textgt{補足}};
+\fill (0,1)--(1,0)--(2,1)--(1,2)--cycle;
+\fill[gray] (1,1)--(2,0)--(3,1)--(2,2)--cycle;
+\fill (2,1)--(3,0)--(4,1)--(3,2)--cycle;
+\fill (10,1)--(11,0)--(12,1)--(11,2)--cycle;
+\fill[gray] (9,1)--(10,0)--(11,1)--(10,2)--cycle;
+\fill (8,1)--(9,0)--(10,1)--(9,2)--cycle;
+\end{tikzpicture}\;\\}
+\newcommand{\answer}%証明アイコン
+{
+\vskip.1\baselineskip %はじめに半分の空行
+\noindent
+\begin{tikzpicture}[scale=0.2, baseline=2.8pt]
+\draw (3.3,1) node{\textgt{解 答}};
+\draw[double,thick,rounded corners=3pt,] (0,0)--(6.5,0)--(6.5,2.2)--(0,2.2)--cycle;
+\end{tikzpicture}\;\\}
+
+
+%ハイパーリンクの設定
+%なるべく後ろに配置すること
+\hypersetup{%
+ setpagesize=false,%
+ bookmarks=true,%
+ bookmarksdepth=tocdepth,%
+ bookmarksnumbered=true,%
+ hidelinks,
+ colorlinks=false,%
+ pdftitle={},%
+ pdfsubject={},%
+ pdfauthor={},%
+ pdfkeywords={}
+}

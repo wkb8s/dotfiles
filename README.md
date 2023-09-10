@@ -1,10 +1,21 @@
 # dotfiles
 
-## How to use
-
+## how to set up
+All you need to set up mac is to execute following commmands.
 ```
-$ git clone
+$ git clone https://github.com/wkb8s/dotfiles.git
+$ cd dotfiles
+$ make
 ```
 
-# additional setting
-- [ここ](vivaldi://experiments/)から, Vivaldi の Custom CSS を有効にする
+You need execute the following commmands at once.
+```
+$ make once
+```
+
+## app preference
+### Vivaldi
+You can enable CSS modifications by accessing following URL.
+```
+vivaldi://experiments/
+```
