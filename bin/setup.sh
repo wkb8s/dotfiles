@@ -8,6 +8,5 @@ skhd --start-service
 $(brew --prefix)/opt/fzf/install
 
 # tex style files
-# cp "~/.latex/jlisting.sty" "/usr/local/texlive/2023/texmf-dist"
-
+cp .latex/jlisting.sty /usr/local/texlive/texmf-local/tex/latex/jlisting.sty
 sudo mktexlsr

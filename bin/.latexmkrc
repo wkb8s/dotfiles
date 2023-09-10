@@ -35,4 +35,6 @@ if ($^O eq 'linux') {
 $clean_ext = "dvi aux fls log synctex.gz fdb_latexmk";
 
 # $aux_dir = "aux";
-$out_dir = "pdf";
+
+# caution! : if you use relative path, compilation failed
+$out_dir = "/Users/wakabayashidaiki/Google Drive/My Drive/pdf";
