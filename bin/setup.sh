@@ -7,11 +7,14 @@ skhd --start-service
 # fzf: install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
 
-# tex style files
-# cp .latex/jlisting.sty /usr/local/texlive/texmf-local/tex/latex/jlisting.sty
-# sudo mktexlsr
-
 # python
 pip3 install numpy
 pip3 install pandas
 pip3 install matplotlib
+
+# wallpaper
+osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/waka/.wallpaper/nord-lake.png"'
+
+#disable sleep
+sudo pmset disable sleep 1
+# sudo pmset disable sleep 0
