@@ -11,5 +11,5 @@ done
 
 # tex style files
 # ln -fnsv ".latex/*.sty" "/usr/local/texlive/2022/texmf-dist"
-ln -fnsv ".latex/*.sty" "/usr/local/texlive/2023/texmf-dist"
-mktexslr
+sudo ln -fnsv ".latex/*.sty" "/usr/local/texlive/2023/texmf-dist"
+mktexlsr
