@@ -8,3 +8,8 @@ for dotfile in "${SCRIPT_DIR}"/.??* ; do
 
     ln -fnsv "$dotfile" "$HOME"
 done
+
+# tex style files
+# ln -fnsv ".latex/*.sty" "/usr/local/texlive/2022/texmf-dist"
+ln -fnsv ".latex/*.sty" "/usr/local/texlive/2023/texmf-dist"
+mktexslr

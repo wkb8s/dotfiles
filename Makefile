@@ -1,9 +1,11 @@
 # Do everything.
-all: init link defaults brew
+all: link defaults brew
 
 # Set initial preference.
-init:
-	bin/init.sh
+init: start link defaults brew setup
+
+start:
+	bin/start.sh
 
 # Link dotfiles.
 link:
@@ -17,6 +19,5 @@ defaults:
 brew:
 	bin/brew.sh
 
-# Command only need to execute at once
-once:
-	bin/once.sh
+setup:
+	bin/setup.sh
