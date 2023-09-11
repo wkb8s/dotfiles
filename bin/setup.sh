@@ -20,4 +20,5 @@ sudo pmset disable sleep 1
 # sudo pmset disable sleep 0
 
 # ssh
+mkdir ~/.ssh
 cp ssh/config ~/.ssh/config

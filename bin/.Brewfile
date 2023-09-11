@@ -1,5 +1,7 @@
 cask_args appdir: "/Applications"
 
+brew upgrade
+
 tap "homebrew/cask-fonts"
 tap "koekeishiya/formulae"
 tap "daipeihust/tap"
@@ -15,6 +17,7 @@ brew "deno"
 brew "ctags"
 brew "neovim"
 brew "im-select"
+brew "basictex"
 brew "clang-format"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
@@ -28,7 +31,6 @@ cask "alacritty"
 cask "1password"
 cask "tailscale"
 cask "google-drive"
-cask "mactex-no-gui"
 cask "input-source-pro"
 cask "karabiner-elements"
 cask "font-jetbrains-mono-nerd-font"
