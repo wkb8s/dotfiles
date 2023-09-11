@@ -35,7 +35,7 @@ defaults write com.apple.dock autohide -bool true
 # defaults delete com.apple.dock autohide # disable
 
 # disable dock
-defaults write com.apple.dock autohide-delay -float 1000; killall Dock
+defaults write com.apple.dock autohide-delay -float 3; killall Dock
 # defaults delete com.apple.dock autohide-delay; killall Dock # disable
 
 # ====================
