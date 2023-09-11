@@ -15,6 +15,9 @@ pip3 install matplotlib
 # wallpaper
 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/waka/.wallpaper/nord-lake.png"'
 
-#disable sleep
+# disable sleep
 sudo pmset disable sleep 1
 # sudo pmset disable sleep 0
+
+# ssh
+cp ssh/config ~/.ssh/config
