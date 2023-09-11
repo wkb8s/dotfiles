@@ -1,7 +1,5 @@
 cask_args appdir: "/Applications"
 
-brew upgrade
-
 tap "homebrew/cask-fonts"
 tap "koekeishiya/formulae"
 tap "daipeihust/tap"
