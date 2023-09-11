@@ -21,6 +21,6 @@ sudo pmset disable sleep 1
 
 # ssh
 mkdir ~/.ssh
-cp ssh/config ~/.ssh/config
+cp ssh/* ~/.ssh
 
 sudo reboot
