@@ -23,7 +23,6 @@ brew "koekeishiya/formulae/skhd"
 
 cask "drawio"
 cask "vivaldi"
-cask "vanilla"
 # cask "mactex-no-gui"
 cask "alacritty"
 cask "1password"
