@@ -48,9 +48,11 @@ key_bindings:
   - { key: Right,     mods: Alt,     chars: "\x1bf"                       } # one word right
   - { key: Left,      mods: Command, chars: "\x1bOH",   mode: AppCursor   } # Home
   - { key: Right,     mods: Command, chars: "\x1bOF",   mode: AppCursor   } # End
+  - { key: Q,         mods: Command,            action: None             } # confirm exit
+  - { key: W,         mods: Command,            action: None             } # confirm exit
   # tmuxのprefixをCtrl-Qにしているので、その設定
   # これがないとtmuxのprefixが効かずに、Alacrittyのキーバインドに持っていかれるっぽい？
-  - { key: Q,         mods: Control, chars: "\x11"                        } # tmux prefix
+  # - { key: Q,         mods: Control, chars: "\x11"                        } # tmux prefix
 
 # nord theme
 colors:
