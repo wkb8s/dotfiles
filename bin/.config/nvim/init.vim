@@ -29,7 +29,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'kana/vim-operator-user'
 Plug 'tribela/vim-transparent'
-" Plug 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'lervag/vimtex'
 Plug 'mcchrish/nnn.vim'
@@ -287,17 +287,17 @@ set laststatus=0
 set cmdheight=0
 
 " lightline
-" let g:lightline = {
-"  \ 'colorscheme': 'nord',
-" \ 'separator': { 'left': '', 'right': '' },
-" \ 'subseparator': { 'left': '', 'right': '' },
-"  \ 'mode_map': {
-"     \ 'n' : 'N',
-"     \ 'i' : 'I',
-"     \ 'v' : 'V',
-"     \ 'V' : 'VL',
-"     \ },
-"  \ }
+let g:lightline = {
+ \ 'colorscheme': 'nord',
+\ 'separator': { 'left': '', 'right': '' },
+\ 'subseparator': { 'left': '', 'right': '' },
+ \ 'mode_map': {
+    \ 'n' : 'N',
+    \ 'i' : 'I',
+    \ 'v' : 'V',
+    \ 'V' : 'VL',
+    \ },
+ \ }
 set noshowmode
 
  " \ 'subseparator': { 'right': '' },
