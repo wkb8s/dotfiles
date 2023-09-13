@@ -59,8 +59,10 @@ if type "bat" > /dev/null 2>&1; then
 fi
 
 # enable zsh plugin
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if type "brew" > /dev/null 2>&1; then
+		source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+		source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -79,7 +79,7 @@
         "sysPrefix": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9",
         "fileHash": "13b405810dbc2da9e13a0a16163e17275287b3d048ba2409529b168f47f2f03c7b85b97ec947ff0b4fb502d6d800b27fe42c89252cd8641c74cf8fc327e4a000"
       },
-      "expiry": 1694562661797
+      "expiry": 1694656674420
     },
     "/Applications/Xcode.app/Contents/Developer/usr/bin/python3.interpreter.Details.v7": {
       "data": {
@@ -229,7 +229,7 @@
         "displayName": "Python 3.9.6 64-bit",
         "hash": "13b405810dbc2da9e13a0a16163e17275287b3d048ba2409529b168f47f2f03c7b85b97ec947ff0b4fb502d6d800b27fe42c89252cd8641c74cf8fc327e4a000-d3663e6296e28610df944b06b05cf176"
       },
-      "expiry": 1694562667573
+      "expiry": 1694656674511
     },
     "/opt/homebrew/bin/python3.interpreter.Details.v7": {
       "data": {
@@ -289,7 +289,7 @@
           "displayName": "Python 3.9.6 64-bit"
         }
       },
-      "expiry": 1694562667584
+      "expiry": 1694656674524
     },
     "ProposeLSBanner": false,
     "/Library/Developer/CommandLineTools/usr/bin/python3.v3": {
@@ -315,14 +315,14 @@
         "sysPrefix": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9",
         "fileHash": "b171f470ba0bad8998344a7ef6933197294bfd012130565d9d75d8934fc1296d91e10c1437e95ad8ccfca6c0c9a58ead874c096b9e3a385259799e6584c7453d"
       },
-      "expiry": 1694562661841
+      "expiry": 1694649455452
     },
     "/Library/Developer/CommandLineTools/usr/bin/python3.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 3.9.6 64-bit",
         "hash": "b171f470ba0bad8998344a7ef6933197294bfd012130565d9d75d8934fc1296d91e10c1437e95ad8ccfca6c0c9a58ead874c096b9e3a385259799e6584c7453d-6fc80ae0d0b92cebf5ad5ad1db9a84c4"
       },
-      "expiry": 1694562667569
+      "expiry": 1694649455454
     },
     "/Library/Developer/CommandLineTools/usr/bin/python3.interpreter.Details.v7": {
       "data": {
@@ -352,7 +352,7 @@
           "displayName": "Python 3.9.6 64-bit"
         }
       },
-      "expiry": 1694562667579
+      "expiry": 1694656674520
     },
     "pylint_DisableLinterInstallPrompt": true,
     "InterpreterAutoSeletionRule-currentPath": {
