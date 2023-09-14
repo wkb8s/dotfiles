@@ -25,6 +25,13 @@
 # C language
 *.out
 *.o
+*.d
+
+# assembly
+_*
+*.asm
+*.sym
+*.ftr
 
 # Latex
 *.dvi
