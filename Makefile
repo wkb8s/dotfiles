@@ -19,8 +19,5 @@ defaults:
 brew:
 	bin/brew.sh
 
-update:
-	bin/update.sh
-
 setup:
 	bin/setup.sh
