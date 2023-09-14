@@ -63,6 +63,7 @@ Plug 'dense-analysis/ale'
 " Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 " Plug 'junegunn/vim-easy-align'
 Plug 'dhruvasagar/vim-table-mode'
+" Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
 
 """""""""""
@@ -385,8 +386,8 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " let g:comfortable_motion_air_drag = 4.0
 
 " indentLine
-" disable conceal
-let g:indentLine_conceallevel = 0
+" disable conceal in markdown(?)
+" let g:indentLine_conceallevel = 0
 
 " undo tree
 let g:undotree_ShortIndicators = 1

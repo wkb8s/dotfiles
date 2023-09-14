@@ -2,7 +2,7 @@
 	name = Daiki Wakabayashi
 	email = apollo.daiki@gmail.com
 [core]
-	editor = vim
+	editor = neovim
 	autocrlf = false
 [init]
 	defaultBranch = main
