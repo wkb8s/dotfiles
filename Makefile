@@ -1,8 +1,8 @@
 # Do everything.
-all: link defaults brew update
+all: link defaults brew
 
 # Set initial preference.
-init: start link defaults brew update setup
+init: start link defaults brew setup
 
 start:
 	bin/start.sh
@@ -18,9 +18,6 @@ defaults:
 # Install macOS applications.
 brew:
 	bin/brew.sh
-
-update:
-	bin/update.sh
 
 setup:
 	bin/setup.sh

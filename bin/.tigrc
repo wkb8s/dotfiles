@@ -1,0 +1,29 @@
+# main view の左端にコミットIDを表示する
+# set main-view = id date author:email-user commit-title:graph=yes,refs=yes
+
+# マウスを有効にする
+set mouse = true
+
+# 差分表示に diff-highlight を使う
+set diff-highlight = true
+
+# utf-8 文字で画面描画する (~でトグル)
+set line-graphics = utf-8
+
+# Keybind -----------------------------------------------------------------
+
+# U で pull
+bind generic U      ?git pull %(remote)
+
+# P で remote への push
+bind generic P      ?git push -u %(remote) %(repo:head)
+
+# ; で GitHub の該当コミットを開く
+bind main    ;      @hub browse -- commit/%(commit)
+bind blame   ;      @hub browse -- commit/%(commit)
+bind diff    ;      @hub browse -- commit/%(commit)
+
+# ; で GitHub の該当ページを開く
+bind tree    ;      @hub browse -- blob/%(branch)/%(file)
+bind blob    ;      @hub browse -- blob/%(branch)/%(file)
+bind grep    ;      @hub browse -- blob/%(branch)/%(file)
