@@ -31,7 +31,6 @@
 _*
 *.asm
 *.sym
-*.ftr
 
 # Latex
 *.dvi
