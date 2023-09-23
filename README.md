@@ -1,6 +1,6 @@
 # dotfiles
 
-## Set up
+## How to use
 ### Initial setting
 All you need to set up mac is to execute following commmands.
 ```
@@ -18,14 +18,25 @@ make
 ```
 
 ## Tools
+For example, following tools are configurated automatically.
+
 ### Terminal
-- Alacritty + zsh + tmux
+- Alacritty
+- zsh
+- tmux + tpm
 
 ### Editor
 - Neovim + vim-plug
 
-### Window management
-- yabai + skhd
+### System Preference
+available in mac
 
-### Application management
+### Keybinds
+- Karabiner-element
+
+### Window management
+- yabai
+- skhd
+
+### Development tool / application management
 - Homebrew
