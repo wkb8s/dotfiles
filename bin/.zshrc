@@ -8,6 +8,9 @@ export PATH=$PATH:~/Library/Python/3.9/bin/
 export PATH=$PATH:/opt/homebrew/bin/ # for M1 mac
 export PATH=$PATH:/usr/local/bin/ # for Intel mac
 
+# git diff-highlight
+export PATH=$PATH:/opt/homebrew/share/git-core/contrib/diff-highlight
+
 # latex style file directory
 export TEXINPUTS=~/.latex/
 
@@ -62,6 +65,7 @@ fi
 if type "brew" > /dev/null 2>&1; then
 		source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 		source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+		source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 fi
 
 # fzf

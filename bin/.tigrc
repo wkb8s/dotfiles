@@ -1,0 +1,52 @@
+# main view の左端にコミットIDを表示する
+# set main-view = id date author:email-user commit-title:graph=yes,refs=yes
+
+# 横分割に強制する
+set vertical-split = no
+
+# マウスを有効にする
+set mouse = true
+
+# 差分表示に diff-highlight を使う
+set diff-highlight = true
+
+# utf-8 文字で画面描画する (~でトグル)
+set line-graphics = utf-8
+
+# タブサイズ
+set tab-size = 4
+
+# 検索時に大文字小文字を無視する (default: false)
+set ignore-case = true
+
+# マージ diff を表示する
+set diff-options = -m --first-parent
+
+# 水平分割したウィンドウの下画面サイズを % で指定（行数指定も可）
+set split-view-height = 80%
+
+# Keybind -----------------------------------------------------------------
+
+# F で fetch (default: :toggle file-name / :toggle commit-title-refs)
+bind generic F      ?git fetch %(remote)
+bind main    F      ?git fetch %(remote)
+
+# Alt-f で :toggle file-name / :toggle commit-title-refs
+bind generic <Esc>f :toggle file-name
+bind main    <Esc>f :toggle commit-title-refs
+
+# U で pull
+bind generic U      ?git pull %(remote)
+
+# P で remote への push
+bind generic P      ?git push -u %(remote) %(repo:head)
+
+# ; で GitHub の該当コミットを開く
+bind main    ;      @hub browse -- commit/%(commit)
+bind blame   ;      @hub browse -- commit/%(commit)
+bind diff    ;      @hub browse -- commit/%(commit)
+
+# ; で GitHub の該当ページを開く
+bind tree    ;      @hub browse -- blob/%(branch)/%(file)
+bind blob    ;      @hub browse -- blob/%(branch)/%(file)
+bind grep    ;      @hub browse -- blob/%(branch)/%(file)

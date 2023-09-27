@@ -255,7 +255,7 @@ augroup END
 set virtualedit=onemore
 set showmatch
 set termguicolors
-set showtabline=1
+set showtabline=2
 set shortmess+=I "disable start menu"
 
 " syntax highlight
