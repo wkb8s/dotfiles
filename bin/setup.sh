@@ -11,6 +11,13 @@ $(brew --prefix)/opt/fzf/install
 pip3 install numpy
 pip3 install pandas
 pip3 install matplotlib
+pip3 install pip-review
+
+# atcoder
+## atcoder-cli
+npm install -g atcoder-cli
+## online-judge-tools
+pip3 install online-judge-tools
 
 # wallpaper
 osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/waka/.wallpaper/nord-lake.png"'

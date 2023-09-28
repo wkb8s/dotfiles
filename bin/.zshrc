@@ -1,5 +1,5 @@
-# gcc
-export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/Users/wakabayashidaiki/Google\ Drive/My\ Drive/learn/atcoder/include/
+# bits/stdc++.h
+export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:~/.atcoder/include/
 
 # online judge tools
 export PATH=$PATH:~/Library/Python/3.9/bin/
