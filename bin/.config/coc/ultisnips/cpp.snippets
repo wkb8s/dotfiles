@@ -3,23 +3,22 @@ snippet main "template for competitive programming"
 using namespace std;
 
 /* alias */
-using ll   = long long;
-using vi   = vector<int>;
-using vll  = vector<long long>;
-using vvi  = vector<vi>;
-using vvll = vector<vll>;
-using vs   = vector<string>;
-using pii  = pair<int, int>;
+using ll    = long long;
+using vi    = vector<int>;
+using vb    = vector<bool>;
+using vll   = vector<long long>;
+using vvi   = vector<vi>;
+using vvb   = vector<vb>;
+using vvll  = vector<vll>;
+using vs    = vector<string>;
+using pii   = pair<int, int>;
+using Graph = vector<vector<array<int, 3>>>;
 
 /* rep macro */
 #define irep(i, a, n) for (long long i = (a); i < (long long)(n); i++)
 #define rep(i, n) irep(i, 0, n)
 
 /* struct */
-struct Point {
-  int x;
-  int y;
-};
 struct Edge {
   int from;
   int to;
@@ -43,14 +42,24 @@ int main() {
 endsnippet
 
 snippet dfs "depth first search"
-// need "seen.assign(N, false);" before call
-vector<bool> seen;
+vector<bool> seen(N, false);
 void dfs(const Graph &G, int v) {
   seen[v] = true;
 
   for (auto next_v : G[v]) {
-		if (seen[next_v]) continue;
-		dfs(G, next_v);
+		if (!seen[next_v])
+		  dfs(G, next_v);
+  }
+}
+endsnippet
+
+snippet dfs_weight "depth first search (weightened)"
+void dfs(const Graph &G, int v, int w) {
+  seen[v] = true;
+
+  for (auto [next_v, dw] : G[v]) {
+    if (!seen[next_v])
+      dfs(G, next_v, w + dw);
   }
 }
 endsnippet
