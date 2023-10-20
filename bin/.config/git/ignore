@@ -14,7 +14,6 @@
 /.git/
 /.local/
 /.config/
-/src/
 
 # ctags
 .tags

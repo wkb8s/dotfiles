@@ -8,6 +8,10 @@ export PATH=$PATH:~/Library/Python/3.9/bin/
 export PATH=$PATH:/opt/homebrew/bin/ # for M1 mac
 export PATH=$PATH:/usr/local/bin/ # for Intel mac
 
+# java
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+
 # git diff-highlight
 export PATH=$PATH:/opt/homebrew/share/git-core/contrib/diff-highlight
 

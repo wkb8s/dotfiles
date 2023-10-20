@@ -13,6 +13,9 @@ pip3 install pandas
 pip3 install matplotlib
 pip3 install pip-review
 
+# java
+sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+
 # atcoder
 ## atcoder-cli
 npm install -g atcoder-cli
