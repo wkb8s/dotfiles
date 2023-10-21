@@ -1,25 +1,8 @@
 # Mac
 .DS_Store
-/Applications/
-/Applications (Parallels)/
-/Parallels/
-/Library/
-/Music/
-/Pictures/
-/Movies/
-/Public/
-/Shared Drives/
-/.vim/
-/.zsh/
-/.git/
-/.local/
-/.config/
 
 # ctags
 .tags
-
-# git
-.gitignore
 
 # C language
 *.out
