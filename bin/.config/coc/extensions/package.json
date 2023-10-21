@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "coc-snippets": ">=3.1.6",
-    "coc-rust-analyzer": ">=0.73.0",
-    "coc-texlab": ">=3.2.1",
-    "coc-python": ">=1.2.13",
-    "coc-java": ">=1.15.2"
-  }
-}

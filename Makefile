@@ -1,22 +1,20 @@
-# Do everything.
+# Update & Clean up
 all: link defaults update
 
-# Set initial preference.
-init: start link defaults update setup
+# Initial Setting
+init: init_install link defaults update setup
 
-start:
-	bin/start.sh
+init_install:
+	./init_install.sh
 
-# Link dotfiles.
 link:
-	bin/link.sh
+	./link.sh
 
-# Set macOS system preferences.
 defaults:
-	bin/defaults.sh
+	./defaults.sh
 
 update:
-	bin/update.sh
+	./update.sh
 
 setup:
-	bin/setup.sh
+	./setup.sh

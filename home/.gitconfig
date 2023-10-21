@@ -1,0 +1,16 @@
+[user]
+		name = Daiki Wakabayashi
+		email = apollo.daiki@gmail.com
+[core]
+		editor = nvim
+		autocrlf = false
+[pull]
+		rebase = false
+[init]
+		defaultBranch = main
+[alias]
+		st = status -s
+[pager]
+		log = diff-highlight | less
+		show = diff-highlight | less
+		diff = diff-highlight | less

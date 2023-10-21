@@ -1,7 +1,8 @@
 # dotfiles
+dotfiles for my personal use.
 
 ## How to use
-### Initial setting
+### Initial Setting
 All you need to set up mac is to execute following commmands.
 ```
 git clone https://github.com/wkb8s/dotfiles.git
@@ -40,3 +41,23 @@ available in mac
 
 ### Development tool / application management
 - Homebrew
+
+
+## Preference
+
+### System Settings
+- reduce motion
+
+### Vivaldi
+You can enable CSS modifications by accessing following URL.
+```
+vivaldi://experiments/
+```
+
+### AtCoder
+
+```
+acc login
+oj login https://atcoder.jp/home
+```
+
