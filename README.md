@@ -10,6 +10,9 @@ git clone https://github.com/wkb8s/dotfiles.git
 ```
 cd dotfiles && make init
 ```
+```
+git remote set-url origin git@github.com:wkb8s/dotfiles.git
+```
 ### Update & Clean up
 By executing following commmands, you can
 - update & upgrade all formulas and applications
