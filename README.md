@@ -5,7 +5,7 @@ dotfiles for my personal use.
 ### Initial Setting
 All you need to set up mac is to execute following commmands.
 ```
-git clone https://github.com/wkb8s/dotfiles.git
+cd && git clone https://github.com/wkb8s/dotfiles.git
 ```
 ```
 cd dotfiles && make init
