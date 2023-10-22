@@ -27,26 +27,16 @@ if !(type "fzf" > /dev/null 2>&1); then
   exit 1
 fi
 
-# npm
-if !(type "npm" > /dev/null 2>&1); then
-  if [ "$(uname)" == "Linux" ] ; then
-      sudo apt-get install -y npm
-  fi
-  source ~/.zshrc
-fi
-if !(type "npm" > /dev/null 2>&1); then
-  echo "npm not found"
-  exit 1
-fi
-
 # atcoder-cli
-if !(type "acc" > /dev/null 2>&1); then
-  npm install -g atcoder-cli
-  source ~/.zshrc
-fi
-if !(type "acc" > /dev/null 2>&1); then
-  echo "atcoder-cli not found"
-  exit 1
+if [ "$(uname)" == "Darwin" ] ; then
+  if !(type "acc" > /dev/null 2>&1); then
+    npm install -g atcoder-cli
+    source ~/.zshrc
+  fi
+  if !(type "acc" > /dev/null 2>&1); then
+    echo "atcoder-cli not found"
+    exit 1
+  fi
 fi
 
 # Vim-plug
