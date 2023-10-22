@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# copy history template
-if [ ! -e ~/.zsh_history ];then
-  echo "created .zsh_history"
-  cp home/.zsh_history ~/
-fi
-
 # Homebrew
 if !(type "brew" > /dev/null 2>&1); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" > /dev/null

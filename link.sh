@@ -2,6 +2,12 @@
 
 DOTFILES_DIR="$(cd ./home && pwd)"
 
+# copy history template
+if [ ! -e ~/.zsh_history ];then
+  echo "created .zsh_history"
+  cp home/.zsh_history ~/
+fi
+
 for dotfile in "${DOTFILES_DIR}"/.??* ; do
     [[ "$dotfile" == "${DOTFILES_DIR}/.git" ]] && continue
     [[ "$dotfile" == "${DOTFILES_DIR}/.ssh" ]] && continue

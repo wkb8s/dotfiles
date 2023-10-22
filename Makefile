@@ -1,11 +1,11 @@
 # Update & Clean up
 all: link install update mac
 
-install:
-	./install.sh
-
 link:
 	./link.sh
+
+install:
+	./install.sh
 
 update:
 	./update.sh
