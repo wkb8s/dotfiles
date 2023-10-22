@@ -1,20 +1,14 @@
 # Update & Clean up
-all: link defaults update
+all: install link update mac
 
-# Initial Setting
-init: init_install link defaults update setup
-
-init_install:
-	./init_install.sh
+install:
+	./install.sh
 
 link:
 	./link.sh
 
-defaults:
-	./defaults.sh
-
 update:
 	./update.sh
 
-setup:
-	./setup.sh
+mac:
+	./mac.sh

@@ -5,8 +5,6 @@ if [ "$(uname)" != "Darwin" ] ; then
 	exit 1
 fi
 
-echo "started $0"
-
 # ====================
 #
 # Privacy & Security
@@ -14,7 +12,6 @@ echo "started $0"
 # ====================
 
 # enable firewall
-echo "enable firewall"
 sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
 
 # ====================
@@ -125,6 +122,9 @@ killall Finder
 #
 # ====================
 
+# set wallpaper
+osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/waka/.wallpaper/nord-lake.png"'
+
 # save screencapture in ~/Downloads
 defaults write com.apple.screencapture location ~/Downloads
 
@@ -132,7 +132,6 @@ defaults write com.apple.screencapture location ~/Downloads
 defaults write com.apple.screencapture disable-shadow -bool true
 
 # mute boot sound
-echo "mute boot sound"
 sudo nvram SystemAudioVolume=" "
 
 # disable window animation(?)
@@ -146,7 +145,6 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # disable sleep
-echo "disable sleep"
 sudo systemsetup -setcomputersleep Off > /dev/null
 
 # disable crash report
@@ -155,22 +153,6 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 # improve bluetooth audio quality
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
-# ====================
-#
-# Menu bar
-#
-# ====================
-
-# Display date, day, and time in the menu bar
-# defaults write com.apple.menuextra.clock DateFormat -string 'EEE d MMM HH:mm'
-
-# Display battery level in the menu bar
-# defaults write com.apple.menuextra.battery ShowPercent -string "YES"
-
-# for app in "Dock" \
-# 	"Finder" \
-# 	"SystemUIServer"; do
-# 	killall "${app}" &> /dev/null
-# done
-
-echo "finished $0"
+# cleanup cashes
+sudo rm -rf /System/Library/Caches/* /Library/Caches/* ~/Library/Caches/*
+sudo rm -r /private/var/vm/sleepimage

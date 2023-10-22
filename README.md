@@ -2,21 +2,17 @@
 dotfiles for my personal use.
 
 ## How to use
-### Initial Setting
 All you need to set up mac is to execute following commmands.
 ```
 git clone https://github.com/wkb8s/dotfiles.git
 ```
 ```
-cd dotfiles && make init
+cd dotfiles && make
 ```
 ```
 git remote set-url origin git@github.com:wkb8s/dotfiles.git
 ```
-### Update & Clean up
-By executing following commmands, you can
-- update & upgrade all formulas and applications
-- clean up unnecessary things
+From the next time on, only the following commands need to be executed
 ```
 make
 ```
@@ -46,7 +42,7 @@ available in mac
 - Homebrew
 
 
-## Settings
+## Manual settings
 ### ssh
 In 1Password
 ```

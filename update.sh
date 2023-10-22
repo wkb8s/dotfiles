@@ -1,17 +1,5 @@
 #!/bin/bash
 
-if [ "$(uname)" != "Darwin" ] ; then
-	echo "Not macOS!"
-	exit 1
-fi
-
-echo "started $0"
-
-# for initial setting
-# (brew command not found)
-source ~/.zshrc
-
-# brew
 brew update
 brew upgrade
 # brew upgrade --cask --greedy
@@ -24,12 +12,9 @@ pip3 install --upgrade pip
 if type "pip-review" > /dev/null 2>&1; then
   pip-review --auto
 else
-  echo "pip-review not exist!"
+  pip3 install pip-review
 fi
-
-# cleanup cashes
-echo "cleanup cashes"
-sudo rm -rf /System/Library/Caches/* /Library/Caches/* ~/Library/Caches/*
-sudo rm -r /private/var/vm/sleepimage
-
-echo "finished $0"
+pip3 install numpy
+pip3 install pandas
+pip3 install matplotlib
+pip3 install online-judge-tools
