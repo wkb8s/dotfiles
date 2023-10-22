@@ -30,3 +30,5 @@ if [ -e /opt/homebrew/opt/openjdk/libexec/openjdk.jdk ];then
   # M1 mac
   sudo ln -fnsv /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 fi
+
+source ~/.zshrc
