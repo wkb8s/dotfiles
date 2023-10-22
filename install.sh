@@ -30,6 +30,7 @@ fi
 # atcoder-cli
 if !(type "acc" > /dev/null 2>&1); then
   npm install -g atcoder-cli
+  source ~/.zshrc
 fi
 if !(type "acc" > /dev/null 2>&1); then
   echo "atcoder-cli not found"
