@@ -1,5 +1,5 @@
 # Update & Clean up
-all: install link update mac
+all: link install update mac
 
 install:
 	./install.sh

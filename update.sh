@@ -7,6 +7,8 @@ brew bundle --global
 brew bundle cleanup --global --force
 brew cleanup
 
+npm install -g npm@latest
+
 # python
 pip3 install --upgrade pip
 if type "pip-review" > /dev/null 2>&1; then
