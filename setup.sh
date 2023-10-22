@@ -36,9 +36,8 @@ osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/U
 sudo pmset disable sleep 1
 # sudo pmset disable sleep 0
 
-# ssh
-mkdir ~/.ssh
-cp ssh/* ~/.ssh
+# copy history template
+cp home/.zsh_history ~/
 
 echo "finished $0"
 echo "reboot now"

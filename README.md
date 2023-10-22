@@ -5,7 +5,7 @@ dotfiles for my personal use.
 ### Initial Setting
 All you need to set up mac is to execute following commmands.
 ```
-cd && git clone https://github.com/wkb8s/dotfiles.git
+git clone https://github.com/wkb8s/dotfiles.git
 ```
 ```
 cd dotfiles && make init
@@ -46,13 +46,35 @@ available in mac
 - Homebrew
 
 
-## Preference
+## Settings
+### ssh
+In 1Password
+```
+(Developer) -> (SSH Agent)
+```
+
+### vim plugins
+```
+:PlugInstall
+```
+
+### tmux plugins
+```
+(prefix) + I
+```
 
 ### System Settings
-- reduce motion
+#### reduce motion
+#### Bluetooth
+automatically connected after setting up Apple ID
 
 ### Vivaldi
-You can enable CSS modifications by accessing following URL.
+#### hide tool bar
+```
+(option) + (command) + P
+```
+
+#### enable CSS modifications
 ```
 vivaldi://experiments/
 ```

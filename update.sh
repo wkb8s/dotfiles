@@ -7,6 +7,10 @@ fi
 
 echo "started $0"
 
+# for initial setting
+# (brew command not found)
+source ~/.zshrc
+
 # brew
 brew update
 brew upgrade
