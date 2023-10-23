@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# zsh
+if !(type "zsh" > /dev/null 2>&1); then
+  if [ "$(uname)" == "Linux" ] ; then
+    sudo apt-get install zsh
+    chsh -s $(which zsh)
+  fi
+  exit 0
+fi
+
 # Homebrew
 if !(type "brew" > /dev/null 2>&1); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" > /dev/null

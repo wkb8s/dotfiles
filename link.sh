@@ -23,11 +23,15 @@ if [ "$(uname)" == "Darwin" ] ; then
 fi
 
 # Java
-if [ -e /usr/local/opt/openjdk/libexec/openjdk.jdk ];then
+if [ ! -e /Library/Java/JavaVirtualMachines/openjdk.jdk ];then
   # Intel mac
-  sudo ln -fnsv /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
-fi
-if [ -e /opt/homebrew/opt/openjdk/libexec/openjdk.jdk ];then
+  if [ -e /usr/local/opt/openjdk/libexec/openjdk.jdk ];then
+    sudo ln -fnsv /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+  fi
+
   # M1 mac
-  sudo ln -fnsv /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+  if [ -e /opt/homebrew/opt/openjdk/libexec/openjdk.jdk ];then
+    sudo ln -fnsv /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+  fi
 fi
+

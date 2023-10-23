@@ -4,7 +4,7 @@ available in macOS and Ubuntu
 ## Installation
 ```
 git clone https://github.com/wkb8s/dotfiles.git
-cd dotfiles && make
+cd dotfiles && ./main
 ```
 ## Manual settings
 ### 1Password
