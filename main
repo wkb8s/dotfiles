@@ -1,0 +1,7 @@
+./link.sh
+
+./install.sh
+
+./update.sh
+
+./mac.sh
