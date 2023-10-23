@@ -12,13 +12,14 @@ for dotfile in "${DOTFILES_DIR}"/.??* ; do
     [[ "$dotfile" == "${DOTFILES_DIR}/.git" ]] && continue
     [[ "$dotfile" == "${DOTFILES_DIR}/.ssh" ]] && continue
     [[ "$dotfile" == "${DOTFILES_DIR}/.DS_Store" ]] && continue
+    [[ "$dotfile" == "${DOTFILES_DIR}/.zsh_history" ]] && continue
     ln -fnsv "$dotfile" "$HOME"
 done
 
 # ssh
 mkdir -p ~/.ssh
 if [ "$(uname)" == "Darwin" ] ; then
-    ln -fnsv  "${DOTFILES_DIR}/.ssh/config" "$HOME/.ssh"
+    ln -fnsv "${DOTFILES_DIR}/.ssh/config" "$HOME/.ssh"
 fi
 
 # Java
@@ -30,5 +31,3 @@ if [ -e /opt/homebrew/opt/openjdk/libexec/openjdk.jdk ];then
   # M1 mac
   sudo ln -fnsv /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 fi
-
-source ~/.zshrc

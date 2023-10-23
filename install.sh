@@ -10,17 +10,6 @@ if !(type "brew" > /dev/null 2>&1); then
   exit 1
 fi
 
-# fzf
-if !(type "fzf" > /dev/null 2>&1); then
-  # fzf: install useful key bindings and fuzzy completion:
-  $(brew --prefix)/opt/fzf/install
-  source ~/.zshrc
-fi
-if !(type "fzf" > /dev/null 2>&1); then
-  echo "fzf not found"
-  exit 1
-fi
-
 # atcoder-cli
 if [ "$(uname)" == "Darwin" ] ; then
   if !(type "acc" > /dev/null 2>&1); then
