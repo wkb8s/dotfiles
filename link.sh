@@ -18,6 +18,11 @@ done
 
 # ssh
 mkdir -p ~/.ssh
+if [ "$(uname)" == "Linux" ] ; then
+  if [ ! -e ~/.ssh/id_rsa.pub ];then
+    (cd ~/.ssh && ssh-keygen -t rsa)
+  fi
+fi
 if [ "$(uname)" == "Darwin" ] ; then
     ln -fnsv "${DOTFILES_DIR}/.ssh/config" "$HOME/.ssh"
 fi
