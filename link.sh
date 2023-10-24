@@ -22,6 +22,9 @@ if [ "$(uname)" == "Darwin" ] ; then
     ln -fnsv "${DOTFILES_DIR}/.ssh/config" "$HOME/.ssh"
 fi
 
+
+# Linux ssh setting here
+
 # Java
 if [ ! -e /Library/Java/JavaVirtualMachines/openjdk.jdk ];then
   # Intel mac
