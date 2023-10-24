@@ -70,6 +70,11 @@ if type "bat" > /dev/null 2>&1; then
 		export BAT_THEME="Nord"
 fi
 
+if type "gcc-13" > /dev/null 2>&1; then
+		alias gcc='gcc-13'
+		alias g++='g++-13'
+fi
+
 # enable zsh plugin
 if type "brew" > /dev/null 2>&1; then
 		source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
