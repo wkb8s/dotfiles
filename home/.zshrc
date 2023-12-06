@@ -9,6 +9,7 @@ export PATH=$PATH:/opt/homebrew/bin/ # for M1 mac
 export PATH=$PATH:/usr/local/bin/ # for Intel mac
 export PATH=/home/linuxbrew/.linuxbrew/bin/:$PATH # for Ubuntu
 export PATH=/home/linuxbrew/.linuxbrew/opt/clang-format/bin:$PATH # for Ubuntu
+
 # java
 ## Intel mac
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
@@ -38,6 +39,7 @@ setopt auto_cd
 setopt auto_pushd
 setopt correct
 setopt share_history
+setopt inc_append_history
 setopt hist_reduce_blanks
 setopt hist_ignore_all_dups
 set autochdir # not working
@@ -47,9 +49,25 @@ HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
 
+# less color
+export LESS='-R'
+
+# man color
+export MANPAGER='less -R'
+man() {
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[1;33m") \
+        LESS_TERMCAP_md=$(printf "\e[1;36m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+        man "$@"
+}
+
 # Alias
 alias e='exit'
-alias s='ssh waka'
 alias ga='git add .'
 alias gc='git commit -m'
 alias gs='git push'

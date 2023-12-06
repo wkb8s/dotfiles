@@ -49,6 +49,16 @@ if [ ! -e $HOME/.local/share/nvim/site/autoload/plug.vim ];then
   exit 1
 fi
 
+# github-copilot
+if [ ! -e $HOME/.vim/pack/github/start/copilot.vim ];then
+  git clone https://github.com/github/copilot.vim.git \
+    ~/.config/nvim/pack/github/start/copilot.vim
+fi
+if [ ! -e $HOME/.vim/pack/github/start/copilot.vim ];then
+  echo "github-copilot not found"
+  exit 1
+fi
+
 # Tmux-plugin-manager
 if [ ! -d ~/.tmux/plugins/tpm ];then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
