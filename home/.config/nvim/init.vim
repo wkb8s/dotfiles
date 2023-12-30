@@ -30,7 +30,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'kana/vim-operator-user'
 Plug 'tribela/vim-transparent'
 Plug 'itchyny/lightline.vim'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'lervag/vimtex'
 Plug 'mcchrish/nnn.vim'
 Plug 'arcticicestudio/nord-vim'
@@ -350,6 +350,14 @@ let g:rustfmt_autosave = 1
 """"""""
 " Plug "
 """"""""
+
+" copilot
+let g:copilot_filetypes = #{
+  \   gitcommit: v:true,
+  \   markdown: v:true,
+  \   text: v:true,
+  \   ddu-ff-filter: v:false,
+  \ }
 
 " vim-commentary
 vmap <leader>c gc

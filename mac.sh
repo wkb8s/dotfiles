@@ -31,7 +31,7 @@ defaults -currentHost write -g $modifiermapping -array-add "
 "
 
 # tap to click
-defaults write -g com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # speed up pointer speed
 defaults write -g com.apple.trackpad.scaling 31
@@ -81,6 +81,9 @@ defaults write com.apple.dock persistent-apps -array
 # disable dock
 # defaults write com.apple.dock autohide-delay -float 3; killall Dock
 # defaults delete com.apple.dock autohide-delay; killall Dock # disable
+
+# Dock location
+defaults write com.apple.dock "orientation" -string "right"
 
 # restart Dock
 killall Dock
