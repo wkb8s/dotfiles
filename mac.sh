@@ -126,7 +126,7 @@ killall Finder
 # ====================
 
 # set wallpaper
-osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/waka/.wallpaper/nord-lake.png"'
+osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/waka/.wallpaper/nightcity.jpg"'
 
 # save screencapture in ~/Downloads
 defaults write com.apple.screencapture location ~/Downloads

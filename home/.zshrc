@@ -29,9 +29,13 @@ autoload -Uz compinit
 compinit
 source ~/.zsh/enhancd/init.sh
 
-# Prompt
-precmd() { print "" } # add new line before print prompt
-PROMPT='%F{magenta}❯%f '
+# simple prompt
+# precmd() { print "" } # add new line before print prompt
+# PROMPT='%F{magenta}❯%f '
+# pure prompt
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+autoload -U promptinit; promptinit
+prompt pure
 
 # General
 setopt no_beep
@@ -67,11 +71,6 @@ man() {
 }
 
 # Alias
-alias e='exit'
-alias ga='git add .'
-alias gc='git commit -m'
-alias gs='git push'
-alias gl='git pull'
 alias ll='ls -l'
 alias la='ls -a'
 alias fzf='fzf --reverse --border'
