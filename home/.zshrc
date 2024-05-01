@@ -110,29 +110,6 @@ case ${OSTYPE} in
     ;;
 esac
 
-# Functions
-o() {
-  case ${OSTYPE} in
-    darwin*)
-      cd ~/Google\ Drive/My\ Drive
-      ;;
-    *)
-      cd
-      ;;
-  esac
-  open `find . | fzf`
-}
-
-r() {
-  case ${OSTYPE} in
-    darwin*)
-      mv $1 ~/Google\ Drive/My\ Drive/trash
-      ;;
-    *)
-      ;;
-  esac
-}
-
 # replace '^Z' to "fg"
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
