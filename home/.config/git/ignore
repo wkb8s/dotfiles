@@ -10,7 +10,6 @@
 *.d
 
 # assembly
-*
 *.asm
 *.sym
 

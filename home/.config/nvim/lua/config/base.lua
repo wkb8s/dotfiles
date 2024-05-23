@@ -5,3 +5,6 @@ vim.opt.pumblend = 0 -- ポップアップメニューの不透明度
 -- set line number
 vim.wo.number = true
 vim.opt.scrolloff = 999
+
+-- display
+vim.opt.wrap = false -- テキストの自動折り返しを無効に

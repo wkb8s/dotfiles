@@ -10,6 +10,9 @@ export PATH=$PATH:/usr/local/bin/ # for Intel mac
 export PATH=/home/linuxbrew/.linuxbrew/bin/:$PATH # for Ubuntu
 export PATH=/home/linuxbrew/.linuxbrew/opt/clang-format/bin:$PATH # for Ubuntu
 
+# python
+export PYTHONPATH=$PYTHONPATH:~/Library/Python/3.9/lib/python/site-packages
+
 # java
 ## Intel mac
 export PATH="/usr/local/opt/openjdk/bin:$PATH"

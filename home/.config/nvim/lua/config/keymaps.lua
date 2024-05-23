@@ -14,6 +14,10 @@ keymap("i", "<C-a>", "<Esc>I", opts)
 keymap("", "<C-e>", "<Esc>$", opts)
 keymap("i", "<C-e>", "<Esc>A", opts)
 
+-- switch tabs
+keymap("n", "<C-j>", "gT", opts)
+keymap("n", "<C-k>", "gt", opts)
+
 -- file control
 keymap("n", "<Leader>a", "ggVG", opts)
 keymap("n", "<Leader>s", ":w<CR>", opts)
