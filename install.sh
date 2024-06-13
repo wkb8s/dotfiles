@@ -17,9 +17,17 @@ if !(type "gcc" > /dev/null 2>&1); then
   exit 0
 fi
 
+# curl
+if !(type "curl" > /dev/null 2>&1); then
+  if [ "$(uname)" == "Linux" ] ; then
+    sudo apt install curl
+  fi
+  exit 0
+fi
+
 # Homebrew
 if !(type "brew" > /dev/null 2>&1); then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" > /dev/null
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   source ~/.zshrc
 fi
 if !(type "brew" > /dev/null 2>&1); then
