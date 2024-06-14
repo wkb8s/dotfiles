@@ -78,6 +78,9 @@ if [ ! -d ~/.tmux/plugins/tpm ];then
 fi
 
 # enhancd
+if [ ! -d ~/.zsh ];then
+  mkdir ~/.zsh
+fi
 if [ ! -d ~/.zsh/enhancd ];then
   git clone https://github.com/b4b4r07/enhancd ~/.zsh/enhancd
 fi
