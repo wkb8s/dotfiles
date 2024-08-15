@@ -3,6 +3,10 @@ return {
   'jiangmiao/auto-pairs',
   "nvim-treesitter/nvim-treesitter",
   {
+    "github/copilot.vim",
+    lazy=false,
+  },
+  {
     'mbbill/undotree',
     cmd = 'UndotreeToggle',
     config = function()

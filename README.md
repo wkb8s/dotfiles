@@ -1,5 +1,5 @@
 # dotfiles
-available in macOS and Ubuntu
+Available in macOS/Linux
 
 ## Installation
 ```
@@ -7,14 +7,15 @@ git clone https://github.com/wkb8s/dotfiles.git
 cd dotfiles && ./main
 ```
 ## Manual settings
+### Neovim
+- enable copilot
+```
+:Copilot setup
+```
+
 ### 1Password
 ```
 (Developer) -> (SSH Agent)
-```
-
-### neovim
-```
-:PlugInstall
 ```
 
 ### tpm
