@@ -4,9 +4,11 @@
 if !(type "zsh" > /dev/null 2>&1); then
   if [ "$(uname)" == "Linux" ] ; then
     sudo apt-get install zsh
-    chsh -s $(which zsh)
   fi
-  exit 0
+fi
+
+if [ "$SHELL" != "$(which zsh)" ]; then
+  chsh -s $(which zsh)
 fi
 
 # gcc
