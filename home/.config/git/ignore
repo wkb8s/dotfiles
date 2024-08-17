@@ -1,25 +1,2 @@
-# Mac
-# .DS_Store
-
-# ctags
-# .tags
-
-# C language
-# *.out
-# *.o
-# *.d
-
-# assembly
-# *.asm
-# *.sym
-
-# Latex
-# *.dvi
-# *.synctex.gz
-# *.fls
-# *.aux
-# *.log
-# *.fdb_latexmk
-
-# VsCode
-# .vscode
+# mac
+.DS_Store

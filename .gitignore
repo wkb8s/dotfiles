@@ -1,6 +1,12 @@
+# atcoder-cli
 home/.config/configstore
-home/.config/coc/extensions
-home/.config/coc/memos.json
+
+# karabiner
 home/.config/karabiner/automatic_backups
-home/.config/github-copilot
+
+# github-copilot
 home/.config/nvim/pack/
+home/.config/github-copilot/
+
+# nvim
+home/.config/nvim/lazy-lock.json
