@@ -5,7 +5,7 @@ home/.config/configstore
 home/.config/karabiner/automatic_backups
 
 # github-copilot
-home/.config/nvim/pack/
+home/.config/nvim/pack/github/start/copilot.vim
 home/.config/github-copilot/
 
 # nvim

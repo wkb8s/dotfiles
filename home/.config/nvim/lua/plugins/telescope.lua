@@ -1,30 +1,4 @@
 return {
-  "tpope/vim-commentary",
-  'jiangmiao/auto-pairs',
-  "nvim-treesitter/nvim-treesitter",
-  {
-    "github/copilot.vim",
-    lazy=false,
-  },
-  {
-    'mbbill/undotree',
-    cmd = 'UndotreeToggle',
-    config = function()
-      vim.g.undotree_WindowLayout = 2
-    end
-  },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-    },
-    keys = {
-      { "<leader>tn", "<cmd>Neotree<cr>", desc = "Toggle Neotree" },
-    }
-  },
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.6',

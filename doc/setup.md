@@ -1,5 +1,4 @@
-# dotfiles
-Available in macOS/Linux
+# Setup Manual
 
 ## Installation
 ```
