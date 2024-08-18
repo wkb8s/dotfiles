@@ -2,9 +2,6 @@
 
 DOTFILES_DIR="$(cd ./home && pwd)"
 
-echo "DOTFILES_DIR: ${DOTFILES_DIR}"
-exit 0
-
 # copy history template
 if [ ! -e ~/.zsh_history ];then
   echo "created .zsh_history"

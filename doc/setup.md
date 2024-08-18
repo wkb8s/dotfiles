@@ -39,6 +39,10 @@ cd dotfiles && ./main
 vivaldi://experiments/
 ```
 
+### Alt-tab
+- Control -> Shortcut1 -> Command + Tab
+- Appeerance -> Apparition delay -> 150 ms
+
 ### AtCoder
 ```
 acc login

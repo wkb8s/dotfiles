@@ -89,6 +89,19 @@ if type "bat" > /dev/null 2>&1; then
     alias cat="bat"
 		export BAT_THEME="Nord"
 fi
+if type "dust" > /dev/null 2>&1; then
+    alias du="dust -r -n 50"
+fi
+
+# brew install/uninstall の後に自動で .Brewfile を更新
+brew() {
+  if [[ "$1" == "install" || "$1" == "uninstall" ]]; then
+    command brew "$@"
+    brew bundle dump --force --file=~/.Brewfile
+  else
+    command brew "$@"
+  fi
+}
 
 # enable zsh plugin
 if type "brew" > /dev/null 2>&1; then
