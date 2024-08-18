@@ -4,6 +4,8 @@
 [core]
 		editor = nvim
 		autocrlf = false
+[commit]
+        template = ~/.gitmessage.txt
 [pull]
 		rebase = false
 [init]
