@@ -13,7 +13,7 @@ return {
                         left_bottom = "╰",
                         right_arrow = ">",
                     },
-                    style = "#bb9af7",
+                    style = "#7aa2f7",
                     delay = 50,
                 },
                 indent = {
@@ -27,7 +27,7 @@ return {
                 },
                 line_num = {
                     enable = true,
-                    style = "#bb9af7",
+                    style = "#7aa2f7",
                 },
                 blank = {
                     enable = true,
