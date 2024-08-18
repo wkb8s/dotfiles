@@ -7,10 +7,6 @@ return {
     config = function()
       local lualine = require('lualine')
       local config = {
-        options = {
-          component_separators = {},
-          section_separators = {},
-        },
         sections = {
           lualine_a = {'filename'},
           lualine_b = {'branch'},
