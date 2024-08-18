@@ -9,7 +9,7 @@ keymap("i", "jj", "<Esc>", opts)
 -- shell/emacs bindings
 keymap("i", "<C-b>", "<Left>", opts)
 keymap("i", "<C-f>", "<Right>", opts)
-keymap("", "<C-a>", "<Esc>^", opts)
+keymap("i", "<C-a>", "<Esc>^", opts)
 keymap("i", "<C-a>", "<Esc>I", opts)
 keymap("", "<C-e>", "<Esc>$", opts)
 keymap("i", "<C-e>", "<Esc>A", opts)
